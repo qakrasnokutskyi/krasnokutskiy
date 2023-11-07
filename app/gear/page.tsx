@@ -12,7 +12,7 @@ import EpidemicSound from "public/gear/epidemic-sound.png";
 import DJI from "public/gear/dji.png";
 
 export const metadata: Metadata = {
-  title: "Gear | Brian Ruiz",
+  title: "Gear | Krasnokutskiy",
   description:
     "My toolbox. This is gear I actually own and recommend.",
 };

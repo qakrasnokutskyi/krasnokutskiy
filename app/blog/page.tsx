@@ -4,7 +4,7 @@ import PostList from "./components/ui/PostList";
 import NewsletterSignupForm from "./components/ui/NewsletterSignupForm";
 
 export const metadata: Metadata = {
-  title: "Blog | Brian Ruiz",
+  title: "Blog | Krasnokutskiy",
   description:
     "I write about programming, design, and occasionally life updates!",
 };

@@ -47,10 +47,10 @@ export async function generateMetadata(
   const ogImage = `https://b-r.io/${image}`;
 
   const metadata: Metadata = {
-    title: `${title} | Brian Ruiz`,
+    title: `${title} | Krasnokutskiy`,
     description,
     openGraph: {
-      title: `${title} | Brian Ruiz`,
+      title: `${title} | Krasnokutskiy`,
       description,
       type: "article",
       publishedTime,
@@ -71,7 +71,7 @@ export async function generateMetadata(
 export default async function Post({ params }: { params: any }) {
   const post = allPosts.find((post) => post.slug === params.slug);
 
-  // const seoTitle = `${post.title} | Brian Ruiz`;
+  // const seoTitle = `${post.title} | Krasnokutskiy`;
   // const seoDesc = `${post.summary}`;
   // const url = `https://b-r.io/blog/${post.slug}`;
   // const MDXContent = useMDXComponent(post?.body.code);
@@ -105,7 +105,7 @@ export default async function Post({ params }: { params: any }) {
               className="rounded-full bg-secondary"
             />
             <div className="leading-tight">
-              <p className="font-medium text-primary">Brian Ruiz</p>
+              <p className="font-medium text-primary">Vadim Krasnokutskiy</p>
               <p className="text-secondary">
                 <time dateTime={post.publishedAt}>
                   {formatDate(post.publishedAt)}
