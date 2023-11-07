@@ -7,8 +7,8 @@ import clsx from "clsx";
 import localFont from 'next/font/local'
 
 import texas from "public/gallery/texas.jpg";
-import meLily from "public/gallery/me-lily.jpg";
-import colorado from "public/gallery/colorado.jpg";
+import meArina from "public/gallery/me-arina.png";
+import roma from "public/gallery/roma.jpg";
 import cowboy from "public/gallery/cowboy-bike.webp";
 
 import Halo from "@/components/ui/Halo";
@@ -141,7 +141,7 @@ export default function Gallery() {
     <>
       <section className="flex gap-4 h-[268px] relative">
         <Photo
-          src={meLily}
+          src={roma}
           meta="2021-07-12"
           alt="Brian and Lily"
           width={324}
@@ -172,7 +172,7 @@ export default function Gallery() {
           index={3}
         />
         <Photo
-          src={colorado}
+          src={meArina}
           meta="2022-09-10"
           alt={"Snowboarding in Colorado"}
           width={220}

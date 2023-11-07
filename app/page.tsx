@@ -47,9 +47,8 @@ export default async function Home() {
           className="max-w-lg animate-in text-primary"
           style={{ "--index": 2 } as React.CSSProperties}
         >
-          Hi, I&apos;m Vadim Krasnokutskiy, a software engineer who loves building cool
-          things with code. In addition to coding, I also make YouTube videos,
-          where I focus on tech, creative vlogs, and personal development.
+          Hi, I&apos;m Vadim Krasnokutskiy, a QA mobile engineer who loves test mobile applications. 
+          In addition to testing, I focus on tech, creative vlogs, and personal development.
         </p>
         <ul
           className="animated-list flex animate-in flex-col gap-2 text-secondary md:flex-row md:gap-6"
@@ -57,7 +56,7 @@ export default async function Home() {
         >
           <li className="transition-opacity">
             <Link
-              href="mailto:contact@b-r.io"
+              href="mailto:qakrasnokutskiy@gmail.com"
               className="flex items-center gap-2 no-underline"
             >
               <ArrowUpRightIcon className="h-5 w-5" />

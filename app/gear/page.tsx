@@ -10,6 +10,9 @@ import cables from "public/gear/cables.png";
 import Nikon from "public/gear/nikon.png";
 import EpidemicSound from "public/gear/epidemic-sound.png";
 import DJI from "public/gear/dji.png";
+import applephone from "public/gear/apple-iphone-xr.png";
+import notion from "public/gear/Notion_app_logo.png";
+import openai from "public/gear/openai.jpg"
 
 export const metadata: Metadata = {
   title: "Gear | Krasnokutskiy",
@@ -93,9 +96,7 @@ export default function Gear() {
             className="max-w-lg animate-in"
             style={{ "--index": 2 } as React.CSSProperties}
           >
-            This is gear I actually own and recommend. The affiliate links come
-            at no extra cost, but it does however help support my content
-            creation.
+            This is gear I actually own and recommend.
           </p>
         </div>
 
@@ -116,7 +117,7 @@ export default function Gear() {
                       description={item.description}
                       image={item.image}
                       link={item.link}
-                      sponsored={item.sponsored}
+                      // sponsored={item.sponsored}
                     />
                   );
                 } else {
@@ -132,108 +133,108 @@ export default function Gear() {
 }
 
 const gear = [
-  {
-    name: "Sway Standing Desk",
-    category: "Ergonofis",
-    image: Sway,
-    description: "The highest of quality and made to last. Solid wood.",
-    link: "https://shrsl.com/49346",
-    sponsored: true,
-  },
-  {
-    name: "Desk Shelf",
-    category: "Ergonofis",
-    image: shelf,
-    description: "Elevates your screen(s) to help position your neck in a comfortable ergonomic posture.",
-    link: "https://shrsl.com/49342",
-    sponsored: true,
-  },
-  {
-    name: "Cable Management Solution",
-    category: "Ergonofis",
-    image: cables,
-    description: "An essential for a clean clutter free desk.",
-    link: "https://shrsl.com/4933x",
-    sponsored: true,
-  },
-  {
-    name: "Logitech MX Master Mouse",
-    category: "Home Desk Setup",
-    image: Logi,
-    description:
-      "Ergonomic and comfortable to be used for all day use, love the scrolling!",
-    link: "https://amzn.to/3U5syHG",
-  },
-  {
-    name: "Orbitkey Desk Mat",
-    category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/61Du63bfnlL._AC_SL1500_.jpg",
-    description:
-      "Leather and Recycled PET Felt | Document Hideaway | Magnetic Cable Holder",
-    link: "https://amzn.to/3Dm37eu",
-    sponsored: false,
-  },
-  {
-    name: "Glorious GMMK Pro",
-    category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/71Nk1Qb3PhS._AC_SL1500_.jpg",
-    description: "A 75% mechanical keyboard",
-    link: "https://amzn.to/3U9tcE9",
-  },
-  {
-    name: "Glorious Coiled Cables",
-    category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/71lpNM41jVS._AC_SL1500_.jpg",
-    description: "USB-C Artisan Braided, Mechanical Keyboards",
-    link: "https://amzn.to/3NSznKR",
-  },
+  // {
+  //   name: "Sway Standing Desk",
+  //   category: "Ergonofis",
+  //   image: Sway,
+  //   description: "The highest of quality and made to last. Solid wood.",
+  //   link: "https://shrsl.com/49346",
+  //   sponsored: true,
+  // },
+  // {
+  //   name: "Desk Shelf",
+  //   category: "Ergonofis",
+  //   image: shelf,
+  //   description: "Elevates your screen(s) to help position your neck in a comfortable ergonomic posture.",
+  //   link: "https://shrsl.com/49342",
+  //   sponsored: true,
+  // },
+  // {
+  //   name: "Cable Management Solution",
+  //   category: "Ergonofis",
+  //   image: cables,
+  //   description: "An essential for a clean clutter free desk.",
+  //   link: "https://shrsl.com/4933x",
+  //   sponsored: true,
+  // },
+  // {
+  //   name: "Logitech MX Master Mouse",
+  //   category: "Home Desk Setup",
+  //   image: Logi,
+  //   description:
+  //     "Ergonomic and comfortable to be used for all day use, love the scrolling!",
+  //   link: "https://amzn.to/3U5syHG",
+  // },
+  // {
+  //   name: "Orbitkey Desk Mat",
+  //   category: "Home Desk Setup",
+  //   image: "https://m.media-amazon.com/images/I/61Du63bfnlL._AC_SL1500_.jpg",
+  //   description:
+  //     "Leather and Recycled PET Felt | Document Hideaway | Magnetic Cable Holder",
+  //   link: "https://amzn.to/3Dm37eu",
+  //   sponsored: false,
+  // },
+  // {
+  //   name: "Glorious GMMK Pro",
+  //   category: "Home Desk Setup",
+  //   image: "https://m.media-amazon.com/images/I/71Nk1Qb3PhS._AC_SL1500_.jpg",
+  //   description: "A 75% mechanical keyboard",
+  //   link: "https://amzn.to/3U9tcE9",
+  // },
+  // {
+  //   name: "Glorious Coiled Cables",
+  //   category: "Home Desk Setup",
+  //   image: "https://m.media-amazon.com/images/I/71lpNM41jVS._AC_SL1500_.jpg",
+  //   description: "USB-C Artisan Braided, Mechanical Keyboards",
+  //   link: "https://amzn.to/3NSznKR",
+  // },
 
   {
-    name: "BenQ ScreenBar Monitor Light",
+    name: "Logitech G402 Hyperion Fury",
     category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/71FpP6myfPL._AC_SL1500_.jpg",
+    image: "https://m.media-amazon.com/images/I/71jRUA8nxzL._AC_SY355_.jpg",
     description:
-      "Enhances immersion and focus, creates a comfortable environment",
-    link: "https://amzn.to/3fUAfCi",
+      "The Hyperion Fury mouse features an optical sensor (based on Logitech's Delta Zero technology) and a hybrid sensor based on our exclusive Fusion Engine technology.",
+    link: "https://rozetka.com.ua/ua/logitech_g402_hyperion_fury/p1228365/",
   },
   {
-    name: "Anker USB-C Hub",
+    name: "Hator Rockfall EVO TKL",
     category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/61thMtrP5rL._AC_SL1500_.jpg",
-    description: "The one cable solution for my MacBook Pro.",
-    link: "https://amzn.to/3Dk9vCV",
+    image: "https://m.media-amazon.com/images/I/51I8fWAme9S._AC_SY355_.jpg",
+    description: "Rockfall EVO is a stylish and practical gaming keyboard that will satisfy the needs of every gamer, giving complete freedom of action.",
+    link: "https://rozetka.com.ua/ua/360503238/p360503238/",
   },
   {
-    name: "LG 34WN780 Monitor",
+    name: "Dell UltraSharp U2722D 27' LCD Monitor ",
     category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/81ewD+orLSL._AC_SL1500_.jpg",
-    description: "A 3440 x 1440 IPS Display, great for multitasking.",
-    link: "https://amzn.to/3DJd86G",
+    image: "https://m.media-amazon.com/images/I/81siJZnLDaL._AC_SY355_.jpg",
+    description: "See images with 1.77 times more details than Full HD with 2560x1440 resolution on this 27-inch QHD display.",
+    link: "https://hard.rozetka.com.ua/ua/dell_210_avbf/p229547683/",
   },
+  // {
+  //   name: "Nikon Z6 Full Frame Mirrorless",
+  //   category: "Camera Gear",
+  //   image: Nikon,
+  //   description: "Love the Z6 because it's great for photos and videos.",
+  //   link: "https://amzn.to/3T1CvGa",
+  // },
   {
-    name: "Nikon Z6 Full Frame Mirrorless",
-    category: "Camera Gear",
-    image: Nikon,
-    description: "Love the Z6 because it's great for photos and videos.",
-    link: "https://amzn.to/3T1CvGa",
-  },
-  {
-    name: "Copilot Money",
+    name: "Notion",
     category: "Apps",
-    image: Copilot,
+    image: notion,
     description:
-      "'BRIANRUIZ', 2 months FREE. For all things personal finance, this is a must.",
-    link: "https://copilot.money/link/cxkfRAoUGeybxipT7",
-    sponsored: true,
+      "Your wiki, docs, & projects. Together.",
+    link: "https://www.notion.so/product",
+    // sponsored: true,
   },
   {
-    name: "Epidemic Sound",
+    name: "Chat GPT",
     category: "Apps",
-    image: EpidemicSound,
+    image: openai,
     description:
-      "1 Month Free. This is where I get 95% of the music for my videos. Skip the hassle that is licensing.",
-    link: "https://share.epidemicsound.com/j2d0ao",
-    sponsored: true,
+      "OpenAI is an American company developing and licensing technologies based on machine learning.",
+    link: "https://openai.com/",
+    // sponsored: true,
   },
   // {
   //   name: "Akiflow",
@@ -252,145 +253,145 @@ const gear = [
   //   link: "https://getdex.com/s/brianruizy",
   //   sponsored: true,
   // },
-  {
-    name: "Superhuman Mail",
-    category: "Apps",
-    image: Superhuman,
-    description: "1 Month FREE code. The fastest email experience.",
-    link: "https://superhuman.com/refer/bspuaqpo",
-  },
-  {
-    name: "Nikon Z 28mm f/2.8",
-    category: "Camera Gear",
-    image:
-      "https://ik.imagekit.io/kit/products/e4/bb/nikkor-z-28mm-f-2-8-e4bbd44f78ee3423c2db3a13f117e0e8.png?tr=dpr-1,cm-pad_resize,bg-FFFFFF,q-80,w-270,h-270",
-    description: "My main for walking around, with very useful aperture.",
-    link: "https://amzn.to/3To5UdA",
-  },
-  {
-    name: "NIKON Z 50mm f/1.8 S",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/61u8mYpACQL._AC_SL1500_.jpg",
-    description: "One of my main sit down lenses, with awesome bokeh.",
+  // {
+  //   name: "Superhuman Mail",
+  //   category: "Apps",
+  //   image: Superhuman,
+  //   description: "1 Month FREE code. The fastest email experience.",
+  //   link: "https://superhuman.com/refer/bspuaqpo",
+  // },
+  // {
+  //   name: "Nikon Z 28mm f/2.8",
+  //   category: "Camera Gear",
+  //   image:
+  //     "https://ik.imagekit.io/kit/products/e4/bb/nikkor-z-28mm-f-2-8-e4bbd44f78ee3423c2db3a13f117e0e8.png?tr=dpr-1,cm-pad_resize,bg-FFFFFF,q-80,w-270,h-270",
+  //   description: "My main for walking around, with very useful aperture.",
+  //   link: "https://amzn.to/3To5UdA",
+  // },
+  // {
+  //   name: "NIKON Z 50mm f/1.8 S",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/61u8mYpACQL._AC_SL1500_.jpg",
+  //   description: "One of my main sit down lenses, with awesome bokeh.",
 
-    link: "https://amzn.to/3yEqnmj",
-  },
-  {
-    name: "GoPro HERO10 Black action camera",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/61p2fYdYP+L._AC_SX679_.jpg",
-    description: "Awesome for action video, I use it for my POV shots.",
-    link: "https://amzn.to/3exkZuq",
-  },
+  //   link: "https://amzn.to/3yEqnmj",
+  // },
+  // {
+  //   name: "GoPro HERO10 Black action camera",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/61p2fYdYP+L._AC_SX679_.jpg",
+  //   description: "Awesome for action video, I use it for my POV shots.",
+  //   link: "https://amzn.to/3exkZuq",
+  // },
 
+  // {
+  //   name: "Suptig Chest Mount for GoPro",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/81y-UqVnYAL._AC_SL1500_.jpg",
+  //   description: "This is how I record my POV bike rides! :)",
+  //   link: "https://amzn.to/3DonSG9",
+  // },
+  // {
+  //   name: "Movo VXR10-PRO",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/71CUGiUL2dL._AC_SL1500_.jpg",
+  //   description: "Compact Shotgun Mic Compatible with Cameras and phones.",
+  //   link: "https://amzn.to/3EjYzH7",
+  // },
+  // {
+  //   name: "Movo LV1-USB Lavalier Microphone",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/61eFtjXUWkL._AC_SL1500_.jpg",
+  //   description: "Lapel Microphone, Lav Mic, Clip on Microphone",
+  //   link: "https://amzn.to/3WQ1nDe",
+  // },
+  // {
+  //   name: "ULANZI Camera Tripod",
+  //   category: "Camera Gear",
+  //   image: "https://m.media-amazon.com/images/I/61FTKuvhBeL._AC_SL1500_.jpg",
+  //   description: "Mini Flexible Tripod Stand, Universal use",
+  //   link: "https://amzn.to/3Elzw6G",
+  // },
+  // {
+  //   name: "Brevite Backpack",
+  //   category: "Other",
+  //   image: "https://m.media-amazon.com/images/I/61kuICMElAL._AC_SL1500_.jpg",
+  //   description: "Compact Camera Backpack - A Minimalist & Travel-friendly",
+  //   link: "https://amzn.to/3U5PTJo",
+  // },
+  // {
+  //   name: "Mini 3 Pro Drone",
+  //   category: "Other",
+  //   image: DJI,
+  //   description: "A great DJI drone for beginners, and a great vlogging tool.",
+  //   link: "https://amzn.to/3mdZenf",
+  // },
+  // {
+  //   name: "RS 3 Mini Gimbal",
+  //   category: "Other",
+  //   image: DJI,
+  //   description: "small footprint and portable.",
+  //   link: "https://amzn.to/40LPcJa",
+  // },
+  // {
+  //   name: "HP DisplayLink Hub",
+  //   category: "Office Desk Setup",
+  //   image: "https://m.media-amazon.com/images/I/51Akvh02nDL._AC_SL1280_.jpg",
+  //   description: "A hub that enables dual monitors on M1 MBP.",
+  //   link: "https://amzn.to/3UnTbJo",
+  // },
+  // {
+  //   name: "Dell UltraSharp U2722D",
+  //   category: "Office Desk Setup",
+  //   link: "https://amzn.to/3KLucN1",
+  //   image: "https://m.media-amazon.com/images/I/81siJZnLDaL._AC_SL1500_.jpg",
+  //   description: "A 27 inch 4K monitor",
+  // },
+  // {
+  //   name: "VIVO Dual Monitor Stand",
+  //   category: "Office Desk Setup",
+  //   link: "https://amzn.to/40U0jzC",
+  //   image: "https://m.media-amazon.com/images/I/61JPGtCI0GL._AC_SL1500_.jpg",
+  //   description: "White articulating pneumatic monitor stand",
+  // },
   {
-    name: "Suptig Chest Mount for GoPro",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/81y-UqVnYAL._AC_SL1500_.jpg",
-    description: "This is how I record my POV bike rides! :)",
-    link: "https://amzn.to/3DonSG9",
-  },
-  {
-    name: "Movo VXR10-PRO",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/71CUGiUL2dL._AC_SL1500_.jpg",
-    description: "Compact Shotgun Mic Compatible with Cameras and phones.",
-    link: "https://amzn.to/3EjYzH7",
-  },
-  {
-    name: "Movo LV1-USB Lavalier Microphone",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/61eFtjXUWkL._AC_SL1500_.jpg",
-    description: "Lapel Microphone, Lav Mic, Clip on Microphone",
-    link: "https://amzn.to/3WQ1nDe",
-  },
-  {
-    name: "ULANZI Camera Tripod",
-    category: "Camera Gear",
-    image: "https://m.media-amazon.com/images/I/61FTKuvhBeL._AC_SL1500_.jpg",
-    description: "Mini Flexible Tripod Stand, Universal use",
-    link: "https://amzn.to/3Elzw6G",
-  },
-  {
-    name: "Brevite Backpack",
-    category: "Other",
-    image: "https://m.media-amazon.com/images/I/61kuICMElAL._AC_SL1500_.jpg",
-    description: "Compact Camera Backpack - A Minimalist & Travel-friendly",
-    link: "https://amzn.to/3U5PTJo",
-  },
-  {
-    name: "Mini 3 Pro Drone",
-    category: "Other",
-    image: DJI,
-    description: "A great DJI drone for beginners, and a great vlogging tool.",
-    link: "https://amzn.to/3mdZenf",
-  },
-  {
-    name: "RS 3 Mini Gimbal",
-    category: "Other",
-    image: DJI,
-    description: "small footprint and portable.",
-    link: "https://amzn.to/40LPcJa",
-  },
-  {
-    name: "HP DisplayLink Hub",
-    category: "Office Desk Setup",
-    image: "https://m.media-amazon.com/images/I/51Akvh02nDL._AC_SL1280_.jpg",
-    description: "A hub that enables dual monitors on M1 MBP.",
-    link: "https://amzn.to/3UnTbJo",
-  },
-  {
-    name: "Dell UltraSharp U2722D",
-    category: "Office Desk Setup",
-    link: "https://amzn.to/3KLucN1",
-    image: "https://m.media-amazon.com/images/I/81siJZnLDaL._AC_SL1500_.jpg",
-    description: "A 27 inch 4K monitor",
-  },
-  {
-    name: "VIVO Dual Monitor Stand",
-    category: "Office Desk Setup",
-    link: "https://amzn.to/40U0jzC",
-    image: "https://m.media-amazon.com/images/I/61JPGtCI0GL._AC_SL1500_.jpg",
-    description: "White articulating pneumatic monitor stand",
-  },
-  {
-    name: "MacBook Pro M1 Pro 16-inch",
+    name: "Apple iphone XR",
     category: "Apple",
-    image: "https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_SL1500_.jpg",
-    description: "Daily driver. Sleek, great display, and performant.",
-    link: "https://amzn.to/41fkhEH",
+    image: applephone,
+    description: "Apple iphone XR, RED color",
+    link: "https://yabloki.ua/?gad_source=1&gclid=CjwKCAiA3aeqBhBzEiwAxFiOBjyk8Rub_4AlEutTAJQ5PQFwEn5DfwCbsykLIi3uLAXjfALR_eR8RBoCWnwQAvD_BwE",
   },
+  // {
+  //   name: "Apple AirPods Max",
+  //   category: "Apple",
+  //   image: "https://m.media-amazon.com/images/I/81OdA-ITspL._AC_SL1500_.jpg",
+  //   description: "Active Noise Cancelling, Transparency Mode, Spatial Audio",
+  //   link: "https://amzn.to/3mie64b",
+  // },
   {
-    name: "Apple AirPods Max",
-    category: "Apple",
-    image: "https://m.media-amazon.com/images/I/81OdA-ITspL._AC_SL1500_.jpg",
-    description: "Active Noise Cancelling, Transparency Mode, Spatial Audio",
-    link: "https://amzn.to/3mie64b",
-  },
-  {
-    name: "Apple AirPods Pro",
+    name: "Apple AirPods",
     category: "Apple",
     image:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83_AV5?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803961739",
+      "https://m.media-amazon.com/images/I/41S0ElgxR7L._AC_SX522_.jpg",
     description:
-      "Wireless Earbuds, Up to 2X More Active Noise Cancelling, Adaptive Transparency.",
-    link: "https://amzn.to/3UmMQhq",
+      "New AirPods with charging case",
+    link: "https://yabloki.ua/apple-airpods-v-zarjadnom-futljare-2019-mv7n2.html",
   },
-  {
-    name: "Apple AirTag",
-    category: "Apple",
-    image: "https://m.media-amazon.com/images/I/81Lq1AfCYpS._AC_SL1500_.jpg",
-    description: "Track your keys, wallet, backpack, and more.",
-    link: "https://amzn.to/41dXoSa",
-  },
-  {
-    name: "Apple MagSafe Charger",
-    category: "Apple",
-    image:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHXH3_AV3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1666381499607",
-    description: "The MagSafe Charger delivers fast wireless charging.",
-    link: "https://amzn.to/3UouXP4",
-  },
+  // {
+  //   name: "Apple AirTag",
+  //   category: "Apple",
+  //   image: "https://m.media-amazon.com/images/I/81Lq1AfCYpS._AC_SL1500_.jpg",
+  //   description: "Track your keys, wallet, backpack, and more.",
+  //   link: "https://amzn.to/41dXoSa",
+  // },
+  // {
+  //   name: "Apple MagSafe Charger",
+  //   category: "Apple",
+  //   image:
+  //     "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHXH3_AV3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1666381499607",
+  //   description: "The MagSafe Charger delivers fast wireless charging.",
+  //   link: "https://amzn.to/3UouXP4",
+  // },
 
   
 ];

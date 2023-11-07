@@ -24,8 +24,9 @@ export default function Links() {
               Vadim Krasnokutskiy
             </h1>
             <p className="max-w-sm text-secondary mx-auto text-center">            
-            Software engineer who loves building cool
-            things with code. In addition to coding, I also make YouTube videos. Find me elsewhere @brianruizy
+            QA engineer who loves to create cool things. 
+            By clicking on any block, you can get to know me better. 
+            Find me elsewhere @krasnokutskiii
             </p>
           </div>
         </div>

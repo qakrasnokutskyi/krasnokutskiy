@@ -58,7 +58,7 @@ export default function Stats() {
       <li className="transition-opacity">
         <Link
           className="flex gap-3 items-center no-underline"
-          href={"https://github.com/brianruizy"}
+          href={"https://github.com/qakrasnokutskyi"}
         >
           <FaGithub className="text-xl" />
           <div>
@@ -80,7 +80,7 @@ export default function Stats() {
           </div>
         </Link>
       </li>
-      <li className="transition-opacity">
+      {/* <li className="transition-opacity">
         <Link
           className="flex gap-3 items-center no-underline"
           href={"https://www.youtube.com/@" + username}
@@ -93,7 +93,7 @@ export default function Stats() {
             <span> YouTube Subscribers</span>
           </div>
         </Link>
-      </li>
+      </li> */}
     </ul>
   );
 }

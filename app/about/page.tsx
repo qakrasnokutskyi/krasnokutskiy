@@ -7,18 +7,18 @@ import ConnectLinks from "../../components/ConnectLinks";
 import Workplaces from "./components/Workplaces";
 import Gallery from "./components/Gallery";
 
-import hinesLogo from "public/work/hines-logo.jpeg";
-import perishipLogo from "public/work/periship-logo.jpeg";
+import noosphereLogo from "public/work/noosphere.png";
+import skillupLogo from "public/work/logo-skillup.svg";
 import camsLogo from "public/work/cams-logo.png";
 import uhdLogo from "public/work/uhd.png";
 
-import meLily from "public/gallery/me-lily.jpg";
-import colorado from "public/gallery/colorado.jpg";
+import meArina from "public/gallery/me-arina.png";
+import roma from "public/gallery/roma.jpg";
 
 export const metadata: Metadata = {
   title: "About | Krasnokutskiy",
   description:
-    "I am a full-stack software engineer who basically just enjoys creating things.",
+    "I am a QA engineer who basically just enjoys creating things.",
 };
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
           style={{ "--index": 1 } as React.CSSProperties}
         >
           <Image
-            src={meLily}
+            src={roma}
             alt={"me and lily"}
             width={324}
             height={139}
@@ -55,7 +55,7 @@ export default function About() {
           style={{ "--index": 2 } as React.CSSProperties}
         >
           <Image
-            src={colorado}
+            src={meArina}
             alt={"me and lily"}
             width={220}
             height={260}
@@ -76,23 +76,12 @@ export default function About() {
             <p>Hello world, I&apos;m Vadim Krasnokutskiy!</p>
 
             <p>
-              I have a passion for design and am always looking for ways to
-              incorporate it into my engineering work.
+            I am a mobile and web application tester. 
+            I have a passion for learning something new all the time.
             </p>
             <p>
-              In addition to coding, I also make{" "}
-              <Link
-                className="underline"
-                href="https://www.youtube.com/channel/@brianruizy"
-              >
-                YouTube
-              </Link>{" "}
-              videos, where I focus on tech gear, creative vlogs, and a bit of
-              personal development.
-            </p>
-            <p>
-              When I&apos;m not at my desk I am probably lifting weights,
-              playing soccer, or at a coffee shop :)
+            In addition to testing, I also like to develop myself, and I always learn something new. 
+            I focus on technical equipment, creative work and a bit of personal development.
             </p>
           </div>
         </Section>
@@ -100,11 +89,15 @@ export default function About() {
         <Section heading="Connect" headingAlignment="left">
           <div className="flex flex-col w-full gap-8">
             <p>
-              Have a question or just want to chat? Feel free to{" "}
-              <Link href="mailto:contact@b-r.io" >
+            Have a question or just want to chat? Feel free to{" "}
+              <Link href="mailto:qakrasnokutskiy@gmail.com" >
                 email me
               </Link>
-              . Try finding me anywhere else at @brianruizy
+              . Try finding me anywhere else at telegram - 
+              {" "}
+              <Link href="https://t.me/krasnokutskiii" >
+              @krasnokutskiii
+              </Link>
             </p>
             <ul className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-2 animated-list">
               {ConnectLinks.map((link) => (
@@ -139,21 +132,27 @@ export default function About() {
         <Section heading="Work" headingAlignment="left">
           <div className="flex flex-col w-full gap-8">
             <p>
-              {new Date().getFullYear() - 2019}+ years of professional
+              {new Date().getFullYear() - 2023}+ years of professional
               development experience.
             </p>
             <p>
-              I started my career teaching others how to code, which I will
-              always be appreciative of. Then I worked at a few small local
-              companies. Now I&apos;m a full stack engineer currently working at{" "}
+            I started my career with courses at the Ukrainian training company{" "}
               <Link
                 className="underline"
-                href="https://hines.com"
+                href="https://skillup.ua/"
 
               >
-                Hines
+                SkillUP
               </Link>
-              , one of the largest private real estate investors in the world.
+              , and then I joined the company {" "}
+              <Link
+                className="underline"
+                href="https://noosphereglobal.com/"
+
+              >
+                Noosphere
+              </Link>
+              . Where I still work today.
             </p>
             <Workplaces items={workplaces} />
           </div>
@@ -165,31 +164,31 @@ export default function About() {
 
 const workplaces = [
   {
-    title: "Full Stack Engineer",
-    company: "Hines",
-    time: "2022 -",
-    imageSrc: hinesLogo,
-    link: "https://hines.com",
+    title: "QA Engineer",
+    company: "Noosphere",
+    time: "2023 -",
+    imageSrc: noosphereLogo,
+    link: "https://noosphereglobal.com/",
   },
   {
-    title: "Software Engineer",
-    company: "PeriShip",
-    time: "2021 - 2022",
-    imageSrc: perishipLogo,
-    link: "https://peripharma.com/",
+    title: "QA Student",
+    company: "SkillUP",
+    time: "2022 - 2023",
+    imageSrc: skillupLogo,
+    link: "https://skillup.ua/",
   },
-  {
-    title: "Python Developer",
-    company: "CAMS",
-    time: "2019 - 2020",
-    imageSrc: camsLogo,
-    link: "https://camstex.com",
-  },
-  {
-    title: "Coding Camp Instructor",
-    company: "University of Houston",
-    time: "2019",
-    imageSrc: uhdLogo,
-    link: "https://www.uhd.edu/",
-  },
+  // {
+  //   title: "Python Developer",
+  //   company: "CAMS",
+  //   time: "2019 - 2020",
+  //   imageSrc: camsLogo,
+  //   link: "https://camstex.com",
+  // },
+  // {
+  //   title: "Coding Camp Instructor",
+  //   company: "University of Houston",
+  //   time: "2019",
+  //   imageSrc: uhdLogo,
+  //   link: "https://www.uhd.edu/",
+  // },
 ];
