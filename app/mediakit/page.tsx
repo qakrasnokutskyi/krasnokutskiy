@@ -9,7 +9,7 @@ import { YouTube } from "@/components/Stats";
 import Link from "@/components/ui/Link";
 
 export const metadata: Metadata = {
-  title: "Mediakit | Brian Ruiz",
+  title: "Mediakit | Krasnokutskiy",
   description:
     "Creator based in Houston. Focuses on topics including consumer technology, software engineering, design, and lifestyle.",
 };
@@ -25,7 +25,7 @@ export default function Mediakit() {
           <div className="flex flex-col gap-1">
             <h3 className="text-secondary leading-none">Media Kit</h3>
             <h2 className="text-4xl font-bold tracking-tight whitespace-nowrap">
-              Brian Ruiz
+              Vadim Krasnokutskiy
             </h2>
           </div>
           <div className="max-w-md md:max-w-sm w-fit flex flex-col gap-1">
