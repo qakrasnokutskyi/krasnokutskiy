@@ -16,7 +16,7 @@ import meLily from "public/gallery/me-lily.jpg";
 import colorado from "public/gallery/colorado.jpg";
 
 export const metadata: Metadata = {
-  title: "About | Brian Ruiz",
+  title: "About | Krasnokutskiy",
   description:
     "I am a full-stack software engineer who basically just enjoys creating things.",
 };
@@ -73,7 +73,7 @@ export default function About() {
       >
         <Section heading="About" headingAlignment="left">
           <div className="flex flex-col gap-6">
-            <p>Hello world, I&apos;m Brian Ruiz!</p>
+            <p>Hello world, I&apos;m Vadim Krasnokutskiy!</p>
 
             <p>
               I have a passion for design and am always looking for ways to
