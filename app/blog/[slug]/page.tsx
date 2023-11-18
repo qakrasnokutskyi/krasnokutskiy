@@ -44,7 +44,7 @@ export async function generateMetadata(
     slug,
   } = post;
 
-  const ogImage = `https://b-r.io/${image}`;
+  const ogImage = `https://https://krasnokutskiy.vercel.app/${image}`;
 
   const metadata: Metadata = {
     title: `${title} | Krasnokutskiy`,
@@ -54,7 +54,7 @@ export async function generateMetadata(
       description,
       type: "article",
       publishedTime,
-      url: `https://b-r.io/blog/${title}`,
+      url: `https://krasnokutskiy.vercel.app/blog/${title}`,
       images: [
         {
           url: `https://b-r.io/api/og?title=${title}`,

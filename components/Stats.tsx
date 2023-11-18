@@ -23,7 +23,7 @@ export function YouTube() {
 
 export function GitHub() {
   const { data: githubData, error: githubDataError } = useSWR(
-    `/api/github?username=brianruizy`,
+    `/api/github?username=qakrasnokutskyi`,
     fetcher
   );
 
@@ -33,7 +33,7 @@ export function GitHub() {
 
 export default function Stats() {
   const { theme } = useTheme();
-  const username = "brianruizy";
+  const username = "qakrasnokutskyi";
 
   const { data: githubData, error: githubDataError } = useSWR(
     `/api/github?username=${username}`,
