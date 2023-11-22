@@ -361,13 +361,13 @@ const gear = [
     description: "Apple iphone XR, RED color",
     link: "https://yabloki.ua/?gad_source=1&gclid=CjwKCAiA3aeqBhBzEiwAxFiOBjyk8Rub_4AlEutTAJQ5PQFwEn5DfwCbsykLIi3uLAXjfALR_eR8RBoCWnwQAvD_BwE",
   },
-  // {
-  //   name: "Apple AirPods Max",
-  //   category: "Apple",
-  //   image: "https://m.media-amazon.com/images/I/81OdA-ITspL._AC_SL1500_.jpg",
-  //   description: "Active Noise Cancelling, Transparency Mode, Spatial Audio",
-  //   link: "https://amzn.to/3mie64b",
-  // },
+  {
+    name: "iPad Air M1",
+    category: "Apple",
+    image: "https://m.media-amazon.com/images/I/61CjYtVb7cL._AC_SX522_.jpg",
+    description: "M1 chip, 10.9-inch Liquid Retina Display, 64GB, Wi-Fi 6, 12MP front/12MP Back Camera, Touch ID, All-Day Battery Life – Space Gray",
+    link: "https://yabloki.ua/ipad-air-m1-space-gray-64gb-wi-fi-2022-mm9c3.html",
+  },
   {
     name: "Apple AirPods",
     category: "Apple",
