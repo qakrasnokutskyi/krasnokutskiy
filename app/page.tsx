@@ -27,7 +27,7 @@ export default async function Home() {
             className="animate-in text-secondary"
             style={{ "--index": 1 } as React.CSSProperties}
           >
-            I write code and make videos.
+            I test apps and improve myself.
           </p>
         </div>
         <div
