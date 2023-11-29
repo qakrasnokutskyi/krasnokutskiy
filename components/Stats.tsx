@@ -74,7 +74,7 @@ export default function Stats() {
           <ArrowTrendingUpIcon className="w-5 h-5" />
           <div>
             <FlipNumber>
-              {postsData ? addCommas(postsData?.total) : "0,000"}
+              {postsData ? addCommas(postsData?.total) : "2,135"}
             </FlipNumber>
             <span> Total Blog Views</span>
           </div>
