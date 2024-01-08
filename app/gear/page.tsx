@@ -181,21 +181,21 @@ const gear = [
   //   description: "A 75% mechanical keyboard",
   //   link: "https://amzn.to/3U9tcE9",
   // },
-  // {
-  //   name: "Glorious Coiled Cables",
-  //   category: "Home Desk Setup",
-  //   image: "https://m.media-amazon.com/images/I/71lpNM41jVS._AC_SL1500_.jpg",
-  //   description: "USB-C Artisan Braided, Mechanical Keyboards",
-  //   link: "https://amzn.to/3NSznKR",
-  // },
+  {
+    name: "Felt desk mat",
+    category: "Home Desk Setup",
+    image: "https://m.media-amazon.com/images/I/71JA4HfKShL._AC_SX679_.jpg",
+    description: "The premium 3mm felt desktop mat brings visual structure and organization to your workspace.",
+    link: "https://crafta.ua/products/868953-fetrovyy-kovrik-dlya-rabochego-stola-pod-noutbuk-pk-monitor-poleznyy",
+  },
 
   {
-    name: "Logitech G402 Hyperion Fury",
+    name: "Logitech MX Master 3S",
     category: "Home Desk Setup",
-    image: "https://m.media-amazon.com/images/I/71jRUA8nxzL._AC_SY355_.jpg",
+    image: "https://m.media-amazon.com/images/I/61ni3t1ryQL._AC_SX466_.jpg",
     description:
-      "The Hyperion Fury mouse features an optical sensor (based on Logitech's Delta Zero technology) and a hybrid sensor based on our exclusive Fusion Engine technology.",
-    link: "https://rozetka.com.ua/ua/logitech_g402_hyperion_fury/p1228365/",
+      "Wireless Performance Mouse, Ergo, 8K DPI, Track on Glass, Quiet Clicks, USB-C, Bluetooth, Windows, Linux, Chrome - Graphite - With Free Adobe Creative Cloud Subscription.",
+    link: "https://hard.rozetka.com.ua/ua/mysh-logitech-mx-master-3s-performance-wireless-mouse-bluetooth/g45351880/",
   },
   {
     name: "Hator Rockfall EVO TKL",
