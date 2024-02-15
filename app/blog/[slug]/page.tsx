@@ -54,12 +54,13 @@ export async function generateMetadata(
       description,
       type: "article",
       publishedTime,
-      url: `https://krasnokutskiy.vercel.app/blog/${title}`,
+      url: `https://krasnokutskiy.vercel.app/blog/${slug}`,
       images: [
         {
           url: `https://b-r.io/api/og?title=${title}`,
           alt: title,
         },
+        { url: ogImage, alt: title },
       ],
       
     },
@@ -71,27 +72,24 @@ export async function generateMetadata(
 export default async function Post({ params }: { params: any }) {
   const post = allPosts.find((post) => post.slug === params.slug);
 
-  // const seoTitle = `${post.title} | Krasnokutskiy`;
-  // const seoDesc = `${post.summary}`;
-  // const url = `https://b-r.io/blog/${post.slug}`;
-  // const MDXContent = useMDXComponent(post?.body.code);
+  
+
 
   if (!post) {
     notFound();
   }
 
+  const publishedDate = new Date(post.publishedAt);
+
   return (
     <div className="flex flex-col gap-20">
       <article>
-        <div
-          className="flex animate-in flex-col gap-8"
-          style={{ "--index": 1 } as React.CSSProperties}
-        >
-          <div className="max-w-xl space-y-2">
+          <div className="flex flex-col gap-8">
+          <div className="flex max-w-xl flex-col gap-4">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-primary">
               {post.title}
             </h1>
-            <p className="text-lg leading-tight text-secondary md:text-xl">
+            <p className="text-lg tracking-tight text-tertiary ">
               {post.summary}
             </p>
           </div>
@@ -105,7 +103,7 @@ export default async function Post({ params }: { params: any }) {
               className="rounded-full bg-secondary"
             />
             <div className="leading-tight">
-              <p className="font-medium text-primary">Vadim Krasnokutskiy</p>
+              <p className="text-primary">Vadim Krasnokutskiy</p>
               <p className="text-secondary">
                 <time dateTime={post.publishedAt}>
                   {formatDate(post.publishedAt)}
@@ -120,7 +118,7 @@ export default async function Post({ params }: { params: any }) {
           </div>
         </div>
 
-        {post.image && (
+        {!post.imageless && (
           <>
             <div className="h-8" />
             <Image
@@ -128,7 +126,7 @@ export default async function Post({ params }: { params: any }) {
               alt={`${post.title} post image`}
               width={700}
               height={350}
-              className="-ml-6 w-[calc(100%+48px)] max-w-none animate-in md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)]"
+              className="-ml-6 w-[calc(100%+48px)] max-w-none  md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)]"
               style={{ "--index": 2 } as React.CSSProperties}
               priority
               quality={100}
@@ -137,10 +135,7 @@ export default async function Post({ params }: { params: any }) {
         )}
 
         <div className="h-16" />
-        <div
-          className="prose prose-neutral animate-in"
-          style={{ "--index": 3 } as React.CSSProperties}
-        >
+        <div className="prose prose-neutral">
           <Mdx code={post.body.code} />
         </div>
       </article>

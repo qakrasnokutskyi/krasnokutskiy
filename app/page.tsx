@@ -56,20 +56,20 @@ export default async function Home() {
         >
           <li className="transition-opacity">
             <Link
-              href="mailto:qakrasnokutskiy@gmail.com"
-              className="flex items-center gap-2 no-underline"
-            >
-              <ArrowUpRightIcon className="h-5 w-5" />
-              <span>Email me</span>
-            </Link>
-          </li>
-          <li className="transition-opacity">
-            <Link
               href="/links"
               className="flex items-center gap-2 no-underline"
             >
               <ArrowUpRightIcon className="h-5 w-5" />
-              <span>More ways to connect</span>
+              <span>Contact</span>
+            </Link>
+          </li>
+          <li className="transition-opacity">
+            <Link
+              href="mailto:qakrasnokutskiy@gmail.com"
+              className="flex items-center gap-2 no-underline"
+            >
+              <ArrowUpRightIcon className="h-5 w-5" />
+              <span>Get contacted with me</span>
             </Link>
           </li>
         </ul>

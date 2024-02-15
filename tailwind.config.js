@@ -25,9 +25,9 @@ module.exports = {
       },
       backgroundColor: {
         primary: "var(--gray-1)",
-        secondary: "var(--gray-4)",
-        secondaryA: "var(--gray-a4)",
-        tertiary: "var(--gray-3)",
+        secondary: "var(--gray-3)",
+        secondaryA: "var(--gray-a3)",
+        tertiary: "var(--gray-2)",
       },
       borderColor: {
         primary: "var(--gray-6)",
