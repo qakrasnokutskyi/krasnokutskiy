@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import useSWR from "swr";
-import { useTheme } from "next-themes";
+
 import clsx from "clsx";
 
 import { FaYoutube, FaGithub } from "react-icons/fa";
@@ -32,7 +32,7 @@ export function GitHub() {
 }
 
 export default function Stats() {
-  const { theme } = useTheme();
+ 
   const username = "qakrasnokutskyi";
 
   const { data: githubData, error: githubDataError } = useSWR(
@@ -70,11 +70,11 @@ export default function Stats() {
         </Link>
       </li>
       <li className="transition-opacity">
-        <Link className="flex gap-3 items-center" href="/blog">
+        <Link className="flex gap-3 items-center" href="/">
           <ArrowTrendingUpIcon className="w-5 h-5" />
           <div>
             <FlipNumber>
-              {postsData ? addCommas(postsData?.total) : "2,135"}
+              {postsData ? addCommas(postsData?.total) : "000"}
             </FlipNumber>
             <span> Total Blog Views</span>
           </div>

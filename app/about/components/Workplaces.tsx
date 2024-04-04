@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { useTheme } from "next-themes";
+
 import clsx from "clsx";
 
 import Link from "@/components/ui/Link";
@@ -14,7 +14,7 @@ type Workplace = {
 };
 
 function Workplace({ title, company, imageSrc, time, link }: Workplace) {
-  const { theme } = useTheme();
+  
 
   const content = (
     <>

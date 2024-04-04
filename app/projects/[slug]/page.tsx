@@ -1,93 +1,87 @@
-import { allProjects, Post as PostType } from ".contentlayer/generated";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-
-import Mdx from "@/app/blog/components/ui/MdxWrapper";
-import PostList from "@/app/blog/components/ui/PostList";
-import Tags from "@/components/Tags";
 import Link from "@/components/ui/Link";
-import { formatDate } from "lib/formatdate";
+import { allPosts } from ".contentlayer/generated";
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 
-type PostProps = {
-  post: PostType;
-  related: PostType[];
-};
+import Avatar from "@/public/avatar.png";
 
-export default function Project({ params }: { params: any }) {
-  // const post = allPosts.find((post) => post.slug === params.slug);
-  const post = allProjects.find((post) => post.slug === params.slug);
+import PostList from "@/app/blog/components/ui/PostList";
+import Card from "@/app/components/bento/CardTemplate";
+import Map from "@/app/components/bento/map";
+import Gumroad from "@/app/components/bento/Gumroad";
+import Instagram from "@/app/components/bento/Instagram";
+import YouTube from "@/app/components/bento/Youtube";
 
-  if (!post) {
-    notFound();
-  }
+export default async function Home() {
+  const posts = allPosts
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    // 3 most recent
+    .filter((_, i) => i < 3);
 
   return (
-    <div className="flex flex-col gap-20">
-      <article>
-        <div className="flex animate-in flex-col gap-3">
-          <div className="flex gap-3 text-secondary">
-            <p>{post.time}</p>
-            {post.url && (
-              <>
-                <span>&middot;</span>
-                <Link href={post.url} className="hover:text-primary">
-                  Visit Project
-                </Link>
-              </>
-            )}
-          </div>
-          <h1 className="text-3xl font-bold leading-tight tracking-tight text-primary">
-            {post.title}
-          </h1>
-          <p
-            className="animate-in text-lg leading-tight text-secondary md:text-xl"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            {post.description}
-          </p>
-        </div>
-
-        <div className="h-12" />
+    <div className="flex flex-col gap-16 md:gap-24">
+      <div className="flex animate-in flex-col gap-8">
+        <Image
+          src={Avatar}
+          width={100}
+          height={100}
+          alt="avatar"
+          className="rounded-full bg-secondaryA"
+          style={{ "--index": 1 } as React.CSSProperties}
+        />
         <div
-          className="project prose animate-in"
+          className="animate-in space-y-4"
           style={{ "--index": 2 } as React.CSSProperties}
         >
-          <Mdx code={post.body.code} />
-        </div>
-      </article>
-      <div className="flex flex-col gap-20">
-        <div className="flex flex-col gap-6">
-          <h2>Tags</h2>
-          <div className="flex flex-wrap gap-3 ">
-            {post.tags.map((tag: string) => (
-              <div
-                key={tag}
-                className="whitespace-nowrap rounded-lg bg-secondary px-4 py-1.5 text-sm text-secondary"
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          <h2>Contact</h2>
-          <p className="max-w-lg text-secondary">
-            Need more project details, or interested in working together? Reach
-            out to me directly at{" "}
-            <a href="mailto:qakrasnokutskiy@gmail.com" className="text-primary underline">
-              qakrasnokytskiy@gmail.com
-            </a>
-            . I&apos;d be happy to connect!{" "}
+          <h1 className="text-3xl font-bold tracking-tight text-primary">
+            Brian Ruiz
+          </h1>
+          <p className="max-w-md leading-relaxed text-secondary">
+            Hi there, I&apos;m, a programmer who loves building new things. In
+            addition to coding, I also make YouTube videos, where I focus on
+            tech, creative vlogging, and personal development.
           </p>
         </div>
-
-        <Link href="/projects" className="text-primary underline">
-          ← All Projects
-        </Link>
       </div>
-
-      <div />
+      <div
+        className="grid animate-in grid-cols-2 grid-rows-3 gap-4 md:grid-cols-3 md:grid-rows-2 md:gap-8"
+        style={{ "--index": 3 } as React.CSSProperties}
+      >
+        {/* <YouTube/> */}
+        <Instagram />
+        <Gumroad />
+        <Card className="relative order-2 col-span-2">
+          {/* <Map/> */}
+          {/* chip showing city bottom left corner of card, above map */}
+          <div className="absolute bottom-6 left-6 flex items-center rounded-lg bg-neutral-100/75 px-4 py-1.5 backdrop-blur dark:bg-neutral-900/75">
+            <span className="text-sm font-medium text-primary">
+              Zaporizhzha, UA
+            </span>
+          </div>
+        </Card>
+      </div>
+      <div
+        className="flex animate-in flex-col gap-8"
+        style={{ "--index": 4 } as React.CSSProperties}
+      >
+        <div className="space-y-4">
+          <Link
+            className="group flex items-center gap-2 text-xl font-semibold tracking-tight text-primary"
+            href="/blog"
+          >
+            Latest Posts
+            <ArrowUpRightIcon className="h-5 w-5 text-tertiary transition-all group-hover:text-primary" />
+          </Link>
+          <p className="max-w-md leading-relaxed text-secondary">
+            I occasionally write about programming, productivity, and more.
+            Check me out and subscribe to stay up to date.
+          </p>
+        </div>
+        <PostList posts={posts} />
+      </div>
     </div>
   );
 }

@@ -24,18 +24,18 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="flex flex-col gap-16 md:gap-24">
-      <div>
+       <div>
         <h1 className="animate-in text-3xl font-bold tracking-tight text-primary">
-            About
-          </h1>
-          <p
-            className="animate-in text-secondary"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            Just a quick glimpse.
-          </p>
-        </div>
-      <div className="lg:hidden mb-8">
+        About
+        </h1>
+        <p
+          className="animate-in text-secondary"
+          style={{ "--index": 1 } as React.CSSProperties}
+        >
+          Just a quick glimpse.
+        </p>
+      </div>
+        <div className="mb-8 lg:hidden">
         <div
           className="animate-in"
           style={{ "--index": 1 } as React.CSSProperties}
@@ -45,7 +45,7 @@ export default function About() {
             alt={"me and lily"}
             width={324}
             height={139}
-            className="relative h-60 inset-0 object-cover bg-gray-400 shadow-md pointer-events-none rounded-2xl -rotate-6"
+            className="pointer-events-none relative inset-0 h-60 -rotate-6 rounded-2xl bg-gray-400 object-cover shadow-md"
             priority
           />
         </div>
@@ -59,7 +59,7 @@ export default function About() {
             alt={"me and lily"}
             width={220}
             height={260}
-            className="absolute w-48 inset-0 object-cover bg-gray-400 shadow-md pointer-events-none rounded-2xl rotate-6 left-[45%] md:left-[60%] md:w-56 -top-48"
+            className="pointer-events-none absolute inset-0 -top-48 left-[45%] w-48 rotate-6 rounded-2xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56"
             priority
           />
         </div>
@@ -68,43 +68,53 @@ export default function About() {
         <Gallery />
       </div>
       <div
-        className="flex flex-col gap-16 animate-in md:gap-24"
+        className="flex animate-in flex-col gap-16 md:gap-24"
         style={{ "--index": 3 } as React.CSSProperties}
       >
         <Section heading="About" headingAlignment="left">
           <div className="flex flex-col gap-6">
-            <p>Hello world, I&apos;m Vadim Krasnokutskiy!</p>
-
+            
             <p>
-            I am a mobile and web application tester. 
-            I have a passion for learning something new all the time.
+            Vadim Krasnokutsky, my experience in testing as a QA Engineer{" "}
+              {new Date().getFullYear() - 2023} years. Besides testing, 
+              I also love to develop myself and always learn something new. 
+              I focus on technical equipment, creative work and a bit of personal development.
             </p>
             <p>
-            In addition to testing, I also like to develop myself, and I always learn something new. 
-            I focus on technical equipment, creative work and a bit of personal development.
+            You can chat with me at{" "}
+              <Link
+                className="underline"
+                href="https://t.me/krasnokutskiii"
+              >
+                Telegram.
+              </Link>{" "}
+            
+            </p>
+            <p>
+              When I&apos;m not at work, I'm most likely working on development or improving this site :]
             </p>
           </div>
         </Section>
 
         <Section heading="Connect" headingAlignment="left">
-          <div className="flex flex-col w-full gap-8">
-            <p>
-            Have a question or just want to chat? Feel free to{" "}
-              <Link href="mailto:qakrasnokutskiy@gmail.com" >
-                email me
-              </Link>
-              . Try finding me anywhere else at telegram - 
-              {" "}
-              <Link href="https://t.me/krasnokutskiii" >
-              @krasnokutskiii
-              </Link>
-            </p>
-            <ul className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-2 animated-list">
+        <div className="flex w-full flex-col gap-8">
+            <ul className="animated-list grid flex-grow grid-cols-1 gap-2 md:grid-cols-2">
               {ConnectLinks.map((link) => (
-                <li className="transition-opacity col-span-1" key={link.label}>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li className="col-span-1 transition-opacity" key={link.label}>
                   <Link
                     href={link.href}
-                    className="transition-opacity no-underline w-full border rounded-lg p-4 border-primary inline-grid"
+                    className="inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity"
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-xl">{link.icon}</span>
@@ -113,7 +123,7 @@ export default function About() {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
-                        className="w-5 h-5 ml-auto text-secondary"
+                        className="ml-auto h-5 w-5 text-secondary"
                       >
                         <path
                           fillRule="evenodd"
@@ -130,29 +140,9 @@ export default function About() {
         </Section>
 
         <Section heading="Work" headingAlignment="left">
-          <div className="flex flex-col w-full gap-8">
+          <div className="flex w-full flex-col gap-8">
             <p>
-              {new Date().getFullYear() - 2023}+ years of professional
-              development experience.
-            </p>
-            <p>
-            I started my career with courses at the Ukrainian training company{" "}
-              <Link
-                className="underline"
-                href="https://skillup.ua/"
-
-              >
-                SkillUP
-              </Link>
-              , and then I joined the company {" "}
-              <Link
-                className="underline"
-                href="https://noosphereglobal.com/"
-
-              >
-                Noosphere
-              </Link>
-              . Where I still work today.
+            I started my career with courses at the Ukrainian training company SkillUP, and then I joined the company Noosphere. Where I still work today.
             </p>
             <Workplaces items={workplaces} />
           </div>
@@ -191,4 +181,5 @@ const workplaces = [
   //   imageSrc: uhdLogo,
   //   link: "https://www.uhd.edu/",
   // },
+
 ];
