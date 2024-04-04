@@ -75,7 +75,7 @@ export default function About() {
           <div className="flex flex-col gap-6">
             
             <p>
-            Vadim Krasnokutsky, my experience in testing as a QA Engineer{" "}
+            Hi, i&apos;m Vadim Krasnokutsky, my experience in testing as a QA Engineer{" "}
               {new Date().getFullYear() - 2023} years. Besides testing, 
               I also love to develop myself and always learn something new. 
               I focus on technical equipment, creative work and a bit of personal development.
@@ -91,7 +91,7 @@ export default function About() {
             
             </p>
             <p>
-              When I&apos;m not at work, I'm most likely working on development or improving this site :]
+              When I&apos;m not at work, I&apos;m most likely working on development or improving this site :]
             </p>
           </div>
         </Section>
