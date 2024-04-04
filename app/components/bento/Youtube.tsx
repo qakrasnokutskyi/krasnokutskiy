@@ -25,14 +25,15 @@ export default async function YouTube() {
         <div className="flex aspect-square h-10 w-fit items-center justify-center rounded-xl bg-[#000000]">
           <FaBlogger className="text-2xl text-white" />
         </div>
-        <p className="text-secondary">@krasnokutskii</p>
+        <p className="text-secondary">About me</p>
+        {/* <p className="line-clamp-2">@krasnokutskii</p> */}
         <Link
           className="mt-auto flex items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
-          href="/blog"
+          href="/about"
         >
           <span className="font-medium text-primary">Follow</span>
           <span className="text-tertiary">
-          {Math.floor(data?.subscribers / 1000)}k
+          {Math.floor(data?.subscribers / 100)}
           </span>
         </Link>
       </div>

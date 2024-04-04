@@ -17,6 +17,15 @@ export default function Gumroad() {
           </div>
           <p className="text-secondary">Telegram</p>
           <p className="line-clamp-2">My Telegram profile</p>
+
+          <Link
+          className="mt-auto flex w-fit items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
+          href="https://t.me/krasnokutskiii"
+        >
+          <span className="font-medium text-primary">Follow</span>
+          
+        </Link>
+
         </Card>
       </Link>
     </Halo>
