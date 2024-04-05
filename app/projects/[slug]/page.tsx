@@ -37,12 +37,12 @@ export default async function Home() {
           style={{ "--index": 2 } as React.CSSProperties}
         >
           <h1 className="text-3xl font-bold tracking-tight text-primary">
-            Brian Ruiz
+            Vadim Krasnokutskiy
           </h1>
           <p className="max-w-md leading-relaxed text-secondary">
-            Hi there, I&apos;m, a programmer who loves building new things. In
-            addition to coding, I also make YouTube videos, where I focus on
-            tech, creative vlogging, and personal development.
+            Hi there, I&apos;m, a tester who loves to create something new. 
+            Besides testing, I also enjoy programming, where 
+            I focus on developing my portfolio, and personal development.
           </p>
         </div>
       </div>
@@ -50,11 +50,11 @@ export default async function Home() {
         className="grid animate-in grid-cols-2 grid-rows-3 gap-4 md:grid-cols-3 md:grid-rows-2 md:gap-8"
         style={{ "--index": 3 } as React.CSSProperties}
       >
-        {/* <YouTube/> */}
+        <YouTube/>
         <Instagram />
         <Gumroad />
         <Card className="relative order-2 col-span-2">
-          {/* <Map/> */}
+          <Map/>
           {/* chip showing city bottom left corner of card, above map */}
           <div className="absolute bottom-6 left-6 flex items-center rounded-lg bg-neutral-100/75 px-4 py-1.5 backdrop-blur dark:bg-neutral-900/75">
             <span className="text-sm font-medium text-primary">
@@ -76,8 +76,7 @@ export default async function Home() {
             <ArrowUpRightIcon className="h-5 w-5 text-tertiary transition-all group-hover:text-primary" />
           </Link>
           <p className="max-w-md leading-relaxed text-secondary">
-            I occasionally write about programming, productivity, and more.
-            Check me out and subscribe to stay up to date.
+          From time to time I write about my life, productivity and more. Check me out and subscribe to stay updated.
           </p>
         </div>
         <PostList posts={posts} />
