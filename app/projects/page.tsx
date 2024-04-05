@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function Blog() {
+export default function Projects() {
   const projects = allProjects;
 
   return (
