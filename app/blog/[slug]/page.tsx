@@ -139,13 +139,13 @@ export default async function Post({ params }: { params: any }) {
       </article>
 
       <div className="flex flex-col gap-6">
-        <h2>Tags</h2>
+      <h2 className="text-secondary">Tags</h2>
         <Tags tags={post.tags} />
       </div>
 
       <Subscribe />
 
-      <Link href="/blog">← All Blogs</Link>
+      {/* <Link href="/blog">← All Blogs</Link> */}
       {/* {related.length ? (
         <div className="flex flex-col items-start gap-6">
           <h2>Related posts</h2>
