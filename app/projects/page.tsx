@@ -43,7 +43,7 @@ export default function Projects() {
             )}
           >
             <Link
-              href={`/project/${project.slug}`}
+              href={`/content/${project.slug}`}
               className="w-full md:w-2/5 aspect-video bg-tertiary rounded-lg border border-secondary overflow-clip select-none"
             >
               <Halo strength={10}>
@@ -59,7 +59,7 @@ export default function Projects() {
             <div className="w-full md:w-3/5 space-y-2">
               <div>
                 <Link
-                  href={`/project/${project.slug}`}
+                  href={`/content/${project.slug}`}
                   className="text-primary font-medium hover:underline"
                 >
                   {project.title}
