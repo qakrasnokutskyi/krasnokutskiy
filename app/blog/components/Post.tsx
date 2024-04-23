@@ -1,10 +1,10 @@
-import { formatDate } from "@/lib/formatdate";
-import type { Post } from ".contentlayer/generated";
-import Section from "@/components/Section";
-import Link from "@/components/ui/Link";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "@/components/ui/Link";
+import Section from "@/components/Section";
+import { formatDate } from "@/app/_utils/formatDate";
+import type { Post } from ".contentlayer/generated";
 
 type PostProps = {
   post: Post;
@@ -16,17 +16,12 @@ type PostProps = {
 
 export default function Post({ post, mousePosition }: PostProps) {
   const { publishedAt, slug, title, image } = post;
-  const publishDate = new Date(publishedAt);
-  const showNewBadge =
-    Math.abs(new Date(publishDate).getTime() - new Date().getTime()) /
-      (24 * 60 * 60 * 1000) <
-    30;
   const imageHeight = 150;
   const imageWidth = 300;
   const imageOffset = 24;
 
   return (
-    <li className="group py-3 transition-opacity">
+    <li className="group py-3 first:pt-0 last:pb-0 transition-opacity">
       <div className="transition-opacity">
         {image && mousePosition && (
           <motion.div
@@ -49,7 +44,7 @@ export default function Post({ post, mousePosition }: PostProps) {
         )}
         <div className="flex items-center justify-between gap-6">
           <Section heading={formatDate(publishedAt)}>
-          <Link href={`/blog/${slug}`} className="font-medium leading-tight">
+            <Link href={`/blog/${slug}`} className="font-medium leading-tight">
               {title}
             </Link>
           </Section>
@@ -68,7 +63,7 @@ export default function Post({ post, mousePosition }: PostProps) {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="h-6 w-6"
+                className="h-6 w-6 text-primary"
               >
                 <path
                   stroke-linecap="round"

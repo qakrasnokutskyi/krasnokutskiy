@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 import Halo from "@/components/ui/Halo";
 import FlipNumber from "@/components/FlipNumber";
-import fetcher from "@/lib/fetcher";
+import fetcher from "@/app/_utils/fetcher";
 
 export default function NewsletterSignupForm() {
   const { data: subscribersData, error } = useSWR(
@@ -73,11 +73,11 @@ export default function NewsletterSignupForm() {
 
   return (
     <Halo strength={5}>
-       <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-tertiary p-6 text-center lg:p-8">
+      <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-secondary p-6 text-center lg:p-8">
         <p className="font-medium text-primary">Subscribe to my newsletter</p>
         <p className="max-w-md text-secondary">
           Monthly personal reading and updates on topics like tech, design,
-          design, productivity, programming, and more!
+          productivity, programming, and more!
         </p>
         <form
           className="mt-2 flex  w-full max-w-md flex-col items-center gap-2 md:flex-row"

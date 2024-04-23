@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { allPosts } from ".contentlayer/generated";
-import PostList from "./components/ui/PostList";
-import NewsletterSignupForm from "./components/ui/NewsletterSignupForm";
+import PostList from "./components/PostList";
+import NewsletterSignupForm from "./components/NewsletterSignupForm";
 
 export const metadata: Metadata = {
   title: "Blog | Krasnokutskiy",

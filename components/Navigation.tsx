@@ -3,28 +3,26 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
-import NavLink from "./ui/NavLink";
-import ThemeSwitcher from "./ThemeSwitcher";
-
-import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
+import { Popover, Transition } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/20/solid";
+
+import NavLink from "@/components/ui/NavLink";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const links = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+  { label: "Community", href: "/community" },
   { label: "Gear", href: "/gear" },
-  { label: "Projects", href: "/projects" },
 ];
 
 export default function Navigation() {
   const pathname = `/${usePathname().split("/")[1]}`; // active paths on dynamic sub-pages
 
-
-
   return (
-    <header className="relative z-10 bg-white dark:bg-black md:sticky top-0 md:mt-6">
-      <nav className="mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-2 md:px-6">
+    <header className="md:mt-6">
+      <nav className="mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6">
         <Link href="/" className="shrink-0 text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,19 +53,15 @@ export default function Navigation() {
             </li>
           ))}
         </ul>
-        <Popover className="relative ml-auto md:hidden">
-          <Popover.Button className="flex items-center gap-1 rounded-lg p-1 text-secondary focus:ring-0 focus-visible:outline-none">
-            Menu
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="h-5 w-5"
-            >
-              <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-            </svg>
-          </Popover.Button>
 
+        <div className="ml-auto flex h-8 w-8 items-center justify-center md:ml-0">
+          <ThemeSwitcher />
+        </div>
+
+        <Popover className="relative md:hidden">
+          <Popover.Button className="flex h-8 w-8 items-center justify-center rounded-lg text-secondary">
+            <Bars3Icon className="h-5 w-5 cursor-pointer text-secondary transition-colors hover:text-primary" />
+          </Popover.Button>
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"
@@ -77,7 +71,7 @@ export default function Navigation() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute right-0 z-10 mt-2 w-40 origin-top-right overflow-auto rounded-xl bg-primary p-2 text-base shadow-lg focus:outline-none sm:text-sm">
+            <Popover.Panel className="absolute right-0 z-10 mt-2 w-40 origin-top-right overflow-auto rounded-xl border border-secondary bg-primary p-2 text-base shadow-lg focus:outline-none sm:text-sm">
               <div className="grid">
                 {links.map((link) => (
                   <Link
@@ -86,8 +80,8 @@ export default function Navigation() {
                     className={clsx(
                       "rounded-md px-4 py-2 transition-colors hover:text-primary",
                       pathname === link.href
-                      ? "bg-secondary font-medium"
-                      : "font-normal",
+                        ? "bg-secondary font-medium"
+                        : "font-normal",
                     )}
                   >
                     {link.label}
@@ -97,10 +91,6 @@ export default function Navigation() {
             </Popover.Panel>
           </Transition>
         </Popover>
-
-        <div className="flex h-8 w-8 items-center justify-center">
-          <ThemeSwitcher />
-        </div>
       </nav>
     </header>
   );

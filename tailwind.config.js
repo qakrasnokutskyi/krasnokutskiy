@@ -20,7 +20,6 @@ module.exports = {
         primary: "var(--gray-12)",
         secondary: "var(--gray-11)",
         tertiary: "var(--gray-9)",
-        brand: "var(--brand)",
         link: "var(--blue-10)",
       },
       backgroundColor: {
@@ -30,6 +29,10 @@ module.exports = {
         tertiary: "var(--gray-2)",
       },
       borderColor: {
+        primary: "var(--gray-6)",
+        secondary: "var(--gray-4)",
+      },
+      divideColor: {
         primary: "var(--gray-6)",
         secondary: "var(--gray-4)",
       },

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
-
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
+import { Providers } from "@/app/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,21 +28,18 @@ export default function RootLayout({
           "antialiased bg-white dark:bg-black text-primary width-full"
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
+        <div
+          vaul-drawer-wrapper=""
+          className="min-h-[100vh] bg-white dark:bg-black"
         >
-          <Navigation />
-          <div
-            className={
-              "px-6 md:px-6 pt-16 pb-24 md:pt-20 md:pb-44 max-w-[700px] mx-auto"
-            }
-          >
-            {children}
-          </div>
-        </ThemeProvider>
-        <Analytics />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navigation />
+            <div className="mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
+              <Providers>{children}</Providers>
+            </div>
+          </ThemeProvider>
+          <Analytics />
+        </div>
       </body>
     </html>
   );

@@ -1,17 +1,19 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
+import Link from "@/components/ui/Link";
 import { allPosts, Post as PostType } from ".contentlayer/generated";
 
 import Tags from "@/components/Tags";
-import Link from "@/components/ui/Link";
-import Mdx from "@/app/blog/components/ui/MdxWrapper";
-import ViewCounter from "@/app/blog/components/ui/ViewCounter";
-import PostList from "@/app/blog/components/ui/PostList";
-import Subscribe from "@/app/blog/components/ui/NewsletterSignupForm";
-import { formatDate } from "lib/formatdate";
+import Mdx from "@/app/blog/components/MdxWrapper";
+import Subscribe from "@/app/blog/components/NewsletterSignupForm";
+import { formatDate } from "@/app/_utils/formatDate";
 
 import Avatar from "@/public/avatar.png";
+import FlipNumber from "@/components/FlipNumber";
+
+import { getViewsCount } from "@/app/db/queries";
+import { incrementViews } from "@/app/db/actions";
 
 type PostProps = {
   post: PostType;
@@ -110,13 +112,13 @@ export default async function Post({ params }: { params: any }) {
                   ? `(Updated ${formatDate(post.updatedAt)})`
                   : ""}
                 {" · "}
-                <ViewCounter post={post} />
+
+                <Views slug={post.slug} />
               </p>
             </div>
           </div>
         </div>
-
-        {!post.imageless && (
+        {post.image && (
           <>
             <div className="h-8" />
             <Image
@@ -125,38 +127,50 @@ export default async function Post({ params }: { params: any }) {
               width={700}
               height={350}
               className="-ml-6 w-[calc(100%+48px)] max-w-none  md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)]"
-              style={{ "--index": 2 } as React.CSSProperties}
               priority
-              quality={100}
             />
           </>
         )}
-
         <div className="h-16" />
         <div className="prose prose-neutral">
           <Mdx code={post.body.code} />
         </div>
       </article>
 
-      <div className="flex flex-col gap-6">
-      <h2 className="text-secondary">Tags</h2>
-        <Tags tags={post.tags} />
-      </div>
-
-      <Subscribe />
-
-      {/* <Link href="/blog">← All Blogs</Link> */}
-      {/* {related.length ? (
-        <div className="flex flex-col items-start gap-6">
-          <h2>Related posts</h2>
-          <div className="will-change-transform">
-            <PostList posts={related} />
-          </div>
-          <Link href="/blog" underline>
-            ← See all
-          </Link>
+      <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-6">
+          <h2>Tags</h2>
+          <Tags tags={post.tags} />
         </div>
-      ) : null} */}
+
+        <div className="flex flex-col gap-6">
+          <h2>Contact</h2>
+          <p className="max-w-lg text-secondary">
+            Need more details, or interested in working together? Reach out at
+            any of my{" "}
+            <Link href="/links" underline>
+              links
+            </Link>
+            . I&apos;d be happy to connect!{" "}
+          </p>
+        </div>
+
+        <Link href="/blog">← All Blogs</Link>
+      </div>
     </div>
+  );
+}
+
+async function Views({ slug }: { slug: string }) {
+  let blogViews = await getViewsCount();
+  const viewsForPost = blogViews.find((view) => view.slug === slug);
+
+  incrementViews(slug);
+
+  return (
+    <span>
+      <FlipNumber>{viewsForPost?.count || 0}</FlipNumber>
+      {viewsForPost?.count === 1 ? " view" : " views"}
+    </span>
   );
 }
