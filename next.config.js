@@ -1,6 +1,5 @@
 // next.config.js
 const { withContentlayer } = require("next-contentlayer");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -18,8 +17,9 @@ const nextConfig = {
       "miro.medium.com",
       "img.clerk.com",
       "i.ytimg.com",
+      "store.storeimages.cdn-apple.com",
+      "www.apple.com",
     ],
   },
 };
-
 module.exports = withContentlayer(nextConfig);
