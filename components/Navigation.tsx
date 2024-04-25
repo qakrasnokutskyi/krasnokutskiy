@@ -13,7 +13,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 const links = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Community", href: "/community" },
+  // { label: "Community", href: "/community" },
   { label: "Gear", href: "/gear" },
 ];
 
