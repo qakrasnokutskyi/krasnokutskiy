@@ -89,12 +89,7 @@ export async function getCommunityPostsForTopic(
 }
 
 async function mapUserDataToPosts(posts: any[]): Promise<CommunityPostProps[]> {
-  const userIds = [...new Set(posts.map(post => post.clerk_user_id))];
-  
-  const response = await clerkClient.users.getUserList({
-    userId: userIds,
-    limit: 100,
-  });
+  const response = await clerkClient.users.getUserList();
 
   const userMap = response.reduce((acc: { [key: string]: UserData }, user) => {
     acc[user.id] = {
