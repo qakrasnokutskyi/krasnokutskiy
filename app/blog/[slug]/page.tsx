@@ -6,12 +6,11 @@ import { allPosts, Post as PostType } from ".contentlayer/generated";
 
 import Tags from "@/components/Tags";
 import Mdx from "@/app/blog/components/MdxWrapper";
-import Subscribe from "@/app/blog/components/NewsletterSignupForm";
-import { formatDate } from "@/app/_utils/formatDate";
-
-import Avatar from "@/public/avatar.png";
+import Avatar from "@/app/components/ui/Avatar";
 import FlipNumber from "@/components/FlipNumber";
+import Me from "@/public/avatar.png";
 
+import { formatDate } from "@/app/_utils/formatDate";
 import { getViewsCount } from "@/app/db/queries";
 import { incrementViews } from "@/app/db/actions";
 
@@ -95,13 +94,7 @@ export default async function Post({ params }: { params: any }) {
           </div>
 
           <div className="flex max-w-none items-center gap-4">
-            <Image
-              src={Avatar}
-              width={40}
-              height={40}
-              alt="avatar"
-              className="rounded-full bg-secondary"
-            />
+          <Avatar src={Me} initials="br" size="sm" />
             <div className="leading-tight">
               <p className="text-primary">Vadim Krasnokutskiy</p>
               <p className="text-secondary">
@@ -132,7 +125,7 @@ export default async function Post({ params }: { params: any }) {
           </>
         )}
         <div className="h-16" />
-        <div className="prose prose-neutral">
+        <div className="prose prose-neutral text-pretty">
           <Mdx code={post.body.code} />
         </div>
       </article>
