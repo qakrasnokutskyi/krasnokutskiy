@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   title: "Gear | Krasnokutskiy",
   description:
     "My toolbox. This is gear I actually own and recommend.",
+    openGraph: {
+      title: "Gear | Krasnokutskiy",
+      description: "My toolbox. This is gear I actually own and recommend.",
+      type: "website",
+      url: "https://krasnokutskiy.vercel.app/blog/gear",
+      images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=Gear", alt: "gear" }],
+    },
 };
 
 interface ItemProps {

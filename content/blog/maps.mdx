@@ -1,0 +1,253 @@
+---
+title: How to add beautiful maps to a React app using Mapbox GL
+publishedAt: 2024-04-27
+summary: My experience with adding maps to a React app using MapBox GL JS
+tags: ["React", "MapBox", "UI"]
+---
+
+<SeriesCollapsible />
+
+<blockquote className="font-sans text-secondary">
+  This is a draft post, but sharing in case it's helpful or interesting already.
+</blockquote>
+
+I recently had to add a map to a React app I was working on. I had't worked with maps in a while, so I was a bit nervous about what to choose. After some research, I decided to use [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) to add the map to my app. I was pleasantly surprised by how easy it was to get started and how powerful the library is.
+
+This is what we will have at the end of this article. An awesome map that's fully interactive and can be styled to match your app's theme or overall goal of the map. Go ahead and play around with it. You can zoom in and out, use `ctrl + drag` to adjust the pitch and rotation, or `shift + drag` to scale in and out.
+
+<div className="h-6" />
+<div
+  className="relative overflow-clip rounded-2xl border border-secondary bg-secondary"
+  style={{ height: "400px" }}
+>
+  <Map lng={2.2945} lat={48.8584} zoom={15.25} pitch={30} time={"dusk"} />
+  <div className="absolute bottom-4 left-4 flex flex flex-col rounded-lg bg-neutral-100/75 px-4 py-2 leading-none backdrop-blur dark:bg-neutral-900/75 md:bottom-6 md:left-6">
+    <p className="m-0 text-sm font-medium text-secondary">Location</p>
+    <p className="m-0 text-lg font-semibold text-primary">Paris, France</p>
+  </div>
+</div>
+
+<figcaption>
+  The Eiffel Tower in the evening. This is using the dusk theme. Which is so
+  nice and rich in detail. Later we'll see how to control the lighting and make
+  the map dynamic.
+</figcaption>
+
+## Getting Started
+
+But before we can use the Mapbox API, we need to create an account and get an access token. You can sign up for a free account at [Mapbox Account](https://account.mapbox.com/). Once you have an account, you should be able to find your access token right on the account home page.
+
+The free tier is quite generous and gives you 50,000 map views per month, which should be more than enough for most hobby projects.
+
+Once you have your token you can install the Mapbox GL JS library using npm or whatever package manager you prefer. `npm install mapbox-gl`. And then import it into your React component. For this example I'm using Next.js so the way you access your environment variables is a bit different.
+
+```jsx {8} showLineNumbers
+"use client";
+
+import React, { useRef, useEffect } from "react";
+import mapboxgl from "mapbox-gl"; // import the mapbox library
+import "mapbox-gl/dist/mapbox-gl.css"; // import the mapbox styles
+import { useTheme } from "next-themes";
+
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN; // set the access token
+```
+
+## Creating the Map Component
+
+Next, we create a React component for our map. We use React's useRef hook to create a reference to the map container, and another reference to the map itself. This allows us to access the map instance and the container element in our component.
+
+Also setting the params for the map like the longitude, latitude, zoom level, and pitch. The pitch is the angle at which the map is tilted. A pitch of 0 means the map is flat, while a pitch of 60 means the map is tilted at a 60-degree angle.
+
+```jsx showLineNumbers
+export default function Map({ lng, lat, zoom = 2.5, pitch = 25 }) {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+
+  return(
+    // ...
+  )
+}
+```
+
+## Initializing the Map
+
+We use the useEffect hook to initialize our map. We only want to initialize the map once, so we return early if map.current is already defined. We create a new map instance and pass in the container element, the center coordinates, the zoom level, and the pitch.
+
+```jsx showLineNumbers {5-12}
+export default function Map({ lng, lat, zoom = 2.5, pitch = 25 }) {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      center: [lng, lat],
+      zoom: zoom,
+      pitch: pitch,
+    });
+    // ...
+  });
+
+  return()
+}
+```
+
+## Applying Themes
+
+MapBox Standard comes with 4 awesome themes that you can use to style your map. These are `light`, `dark`, `dusk`, and `dawn`. To make it responsive and match the rest of my interface I'm using `useTheme()` Hook from the `next-themes` package to get the current theme and then map it to the appropriate Mapbox theme.
+
+```jsx showLineNumbers
+const { theme, resolvedTheme } = useTheme();
+let mapTheme;
+
+if (resolvedTheme === "dark") {
+  mapTheme = "night";
+} else if (resolvedTheme === "light") {
+  mapTheme = "light";
+}
+```
+
+<div className="h-6" />
+<div className="grid grid-cols-2 gap-4">
+  <div
+    className="relative w-full overflow-clip rounded-2xl border border-secondary bg-secondary p-12"
+    style={{ height: "320px" }}
+  >
+    <Map lng={-74.0134} lat={40.7137} zoom={15.2} pitch={30} time={"light"} />
+  </div>
+  <div
+    className="relative w-full overflow-clip rounded-2xl border border-secondary bg-secondary p-12"
+    style={{ height: "320px" }}
+  >
+    <Map lng={-74.0134} lat={40.7137} zoom={15.2} pitch={30} time={"night"} />
+  </div>
+</div>
+
+<figcaption>
+  One World Trade Center in New York City. The first map is using the `light`
+  theme and the second map is using the `dark` theme.
+</figcaption>
+
+## Configuring the Map
+
+Once the map's style has loaded, we set the basemap and padding. This part is really fun fun because you can play around with the 3D settings and see the map come to life.
+
+Also I'm adding some padding, in order to make space for the location badge that is to push the long and lat slightly to the right, this is for when the map is a rectangle aspect. Otherwise I would remove the padding and center the position of the badge.
+
+```jsx
+map.current.on("style.load", () => {
+  map.current.setConfigProperty("basemap", "lightPreset", mapTheme);
+  map.current.setPadding({ left: 150 });
+  // ...
+});
+```
+
+<div
+  className="relative overflow-clip rounded-2xl bg-secondary"
+  style={{ height: "300px" }}
+>
+  <div className="absolute bottom-4 left-4 flex flex flex-col rounded-lg bg-neutral-100/75 px-4 py-2 leading-none backdrop-blur dark:bg-neutral-900/75 md:bottom-6 md:left-6">
+    <p className="m-0 text-sm font-medium text-secondary">Location</p>
+    <p className="m-0 text-lg font-semibold text-primary">Paris, France</p>
+  </div>
+</div>
+
+## Adding a Marker
+
+Finally, I'm adding a marker to the map to indicate my current location. The marker can be any HTML element, but I'm using a simple div with a class name, which is styled using CSS. I just created something simple and recognizable, but you can get creative and make it your own.
+
+```jsx
+const el = document.createElement("span");
+el.className = "map-marker";
+
+new mapboxgl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map.current);
+```
+
+```css showLineNumbers
+.map-marker {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--blue-10);
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(255, 255, 255, 0.95);
+}
+```
+
+<div className="flex h-48 items-center justify-center rounded bg-secondary p-4">
+  <span
+    className="z-10 aspect-square h-8 w-8 animate-ping rounded-full border border-white bg-blue-500"
+    style={{ borderWidth: "3px" }}
+  ></span>
+</div>
+
+## Conclusion
+
+And finally time to put it all together. This is how I will use my map component in my Next.js app. I'm passing in the longitude and latitude for the center of the map, and the zoom level and pitch. You can customize these values to fit your needs.
+
+Adding a map to a React app can seem daunting at first, but with the right tools and libraries, it can be a fun and rewarding experience. Mapbox GL JS is a powerful library that makes it easy to add beautiful, interactive maps to your app.
+
+A final thing is that you need to add the `ref={mapContainer}` to the div that will hold the map. This is how the map knows where to render itself, and the class map-container which is where mapbox adds the styles and the map itself.
+
+```jsx showLineNumbers {47-52}
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+
+export default function Map({ lng, lat, zoom = 2.5, pitch = 25 }) {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+
+  const { theme, resolvedTheme } = useTheme();
+  let mapTheme;
+
+  if (resolvedTheme === "dark") {
+    mapTheme = "night";
+  } else if (resolvedTheme === "light") {
+    mapTheme = "light";
+  }
+
+  useEffect(() => {
+    if (map.current) return;
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      center: [lng, lat],
+      zoom: zoom,
+      pitch: pitch,
+    });
+
+    // set config properties
+    map.current.on("style.load", () => {
+      map.current.setConfigProperty("basemap", "lightPreset", mapTheme);
+      map.current.setPadding({ left: 150 });
+
+      const el = document.createElement("span");
+      el.className = "map-marker";
+
+      new mapboxgl.Marker({ element: el })
+        .setLngLat([lng, lat])
+        .addTo(map.current);
+    });
+  });
+
+  return (
+    <div
+      className="overflow-clip rounded-2xl border border-secondary"
+      style={{ height: "400px" }}
+    >
+      <div ref={mapContainer} className="map-container h-full w-full" />
+    </div>
+  );
+}
+```
+
+<figcaption>Our final Map component `Map.jsx`.</figcaption>
+
+Here is the final code for our Map component for reference. I hope this article has helped you get started with adding maps to your React app. If you have any questions feel free to ping me on the [community chat](/community) or [Telegram](https://t.me/krasnokutskiii). Happy mapping!

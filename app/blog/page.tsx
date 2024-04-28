@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "Blog | Krasnokutskiy",
   description:
     "I write about programming, design, and occasionally life updates!",
+    openGraph: {
+      title: "Blog | Krasnokutskiy",
+      description:
+        "I write about programming, design, and occasionally life updates!",
+      type: "website",
+      url: "https://krasnokutskiy.vercel.app/blog/Blog",
+      images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=Blog", alt: "Blog" }],
+    },
 };
 
 export default function Blog() {

@@ -2,12 +2,13 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 
 import CustomImage from "@/app/blog/components/Image";
 import Link from "@/components/ui/Link";
+import Map from "@/app/components/bento/map";
 import Alert from "./mdx/Alert";
 import Weather from "./mdx/Weather";
 import WeatherList from "./mdx/WeatherList";
 import LinkPreview from "./mdx/LinkPreview";
+import SeriesCollapsible from "./mdx/SeriesCollapsible";
 
-import Map from "@/app/components/bento/map";
 
 interface CustomLinkProps
   extends React.DetailedHTMLProps<
@@ -45,6 +46,7 @@ const components = {
   WeatherList: WeatherList,
   LinkPreview: LinkPreview,
   Map: Map,
+  SeriesCollapsible: SeriesCollapsible,
 };
 
 export default function MdxWrapper({ code }: { code: string }) {
