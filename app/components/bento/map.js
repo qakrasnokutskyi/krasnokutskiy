@@ -12,9 +12,9 @@ export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(35.1396); 
-const [lat, setLat] = useState(47.8388); 
-const [zoom, setZoom] = useState(2.5);
-const [pitch, setPitch] = useState(15);
+  const [lat, setLat] = useState(47.8388); 
+  const [zoom, setZoom] = useState(2.5);
+  const [pitch, setPitch] = useState(15);
 
   const { theme, resolvedTheme } = useTheme();
   let mapTheme;
