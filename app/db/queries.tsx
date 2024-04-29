@@ -44,7 +44,8 @@ export async function getCommunityTopics(): Promise<TopicProps[]> {
     return [];
   }
   const result = await sql`
-    SELECT * FROM Topics;
+    SELECT * FROM Topics
+    ORDER BY Topics.name ASC;
   `;
 
   return result.rows as TopicProps[];
@@ -90,7 +91,7 @@ export async function getCommunityPostsForTopic(
 
 async function mapUserDataToPosts(posts: any[]): Promise<CommunityPostProps[]> {
   const userIds = [...new Set(posts.map(post => post.clerk_user_id))];
-
+  
   const response = await clerkClient.users.getUserList({
     userId: userIds,
     limit: 100,
