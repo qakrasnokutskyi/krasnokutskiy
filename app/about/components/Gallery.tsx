@@ -109,7 +109,7 @@ function Photo({
         <div
           className={clsx(
             shared,
-            "bg-[#FFFAF2] flex items-center rounded-xl overflow-hidden"
+            "bg-[#FFFAF2] flex items-center rounded-2xl overflow-hidden"
           )}
           style={{
             backfaceVisibility: "hidden",

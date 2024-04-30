@@ -13,7 +13,7 @@ export default function Map() {
   const map = useRef(null);
   const [lng, setLng] = useState(35.1396); 
   const [lat, setLat] = useState(47.8388); 
-  const [zoom, setZoom] = useState(2.5);
+  const [zoom, setZoom] = useState(15.5);
   const [pitch, setPitch] = useState(15);
 
   const { theme, resolvedTheme } = useTheme();
@@ -50,10 +50,5 @@ export default function Map() {
     });
   });
 
-  return (
-    <div
-      ref={mapContainer}
-      className="map-container h-full w-full rounded-2xl select-none"
-    />
-  );
+  return <div ref={mapContainer} className="map-container h-full w-full" />;
 }

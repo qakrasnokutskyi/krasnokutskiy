@@ -12,7 +12,7 @@ export default function Gumroad() {
         className="no-underline"
       >
         <Card className="flex aspect-square flex-col gap-1.5 p-4 md:p-6">
-          <div className="flex aspect-square h-10 w-10 items-center justify-center rounded-xl bg-[ffffff]">
+          <div className="flex aspect-square h-8 w-8 items-center justify-center rounded-xl bg-[ffffff]">
             <Logo />
           </div>
           <p className="text-secondary">Telegram</p>

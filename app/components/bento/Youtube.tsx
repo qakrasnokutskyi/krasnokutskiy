@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaBlogger } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import Link from "@/components/ui/Link";
 import Card from "@/app/components/bento/CardTemplate";
 import Halo from "@/components/ui/Halo";
@@ -22,18 +22,18 @@ export default async function YouTube() {
     <Halo className="col-span-2 row-span-1">
     <Card className="flex justify-between gap-6 p-6">
       <div className="flex flex-col gap-1.5">
-        <div className="flex aspect-square h-10 w-fit items-center justify-center rounded-xl bg-[#000000]">
-          <FaBlogger className="text-2xl text-white" />
+        <div className="flex aspect-square h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-bl from-[#7638FA] via-[#FF006A] to-[#FED702]">
+          <FaInstagram className="text-2xl text-white" />
         </div>
         <p className="text-secondary">About me</p>
         {/* <p className="line-clamp-2">@krasnokutskii</p> */}
         <Link
           className="mt-auto flex items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
-          href="/about"
+          href="https://www.instagram.com/krasnokutskii.vadim/"
         >
           <span className="font-medium text-primary">Follow</span>
-          <span className="text-tertiary">
-          {Math.floor(data?.subscribers / 100)}
+          <span className="text-tertiary"> 421
+          {/* {Math.floor(data?.subscribers / 100)} */}
           </span>
         </Link>
       </div>

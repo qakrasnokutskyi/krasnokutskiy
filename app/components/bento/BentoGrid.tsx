@@ -26,7 +26,6 @@ export default function BentoGrid() {
 
 const CommunityBanner = () => (
       <Link href="/community">
-    {/* // <Link href="/links"> */}
     <Card
       className="mb-4 flex items-center gap-4 p-4 md:mb-6 md:gap-6 md:px-6"
       noPadding
