@@ -11,7 +11,7 @@ export default function Instagram() {
           <FaGithub className="text-2xl text-white" />
         </div>
         <p className="text-secondary">GitHub</p>
-        <p className="line-clamp-2">@krasnokutskiy</p>
+        <p className="line-clamp-2">Resitory and all</p>
         <Link
           className="mt-auto flex w-fit items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
           href="https://github.com/qakrasnokutskyi"

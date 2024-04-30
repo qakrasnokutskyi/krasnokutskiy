@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useUser } from "@clerk/nextjs";
 import { useClerk } from "@clerk/clerk-react";
 import { SignInButton } from "@clerk/nextjs";
@@ -17,7 +16,7 @@ export default function User() {
       <>
         <DropdownMenu.Root>
           <DropdownMenu.Trigger className="cursor-pointer rounded-full">
-          <Avatar src={user?.imageUrl} initials={user?.fullName} size="md" />
+            <Avatar src={user?.imageUrl} initials={user?.fullName} size="md" />
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
             <DropdownMenu.Content
