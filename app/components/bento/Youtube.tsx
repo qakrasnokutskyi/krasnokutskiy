@@ -2,25 +2,26 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import Link from "@/components/ui/Link";
 import Card from "@/app/components/bento/CardTemplate";
-import Halo from "@/components/ui/Halo";
 
 // get youtube subs count from route handler api/youtube
-async function getData() {
-  const res = await fetch("https://b-r.io/api/youtube");
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+// async function getData() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/youtube`, {
+//     next: {
+//       revalidate: 86400,
+//     },
+//   });
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default async function YouTube() {
-  const data = await getData();
+  // const data = await getData();
 
   return (
-    <Halo className="col-span-2 row-span-1">
-    <Card className="flex justify-between gap-6 p-6">
+    <Card className="col-span-2 row-span-1 flex justify-between gap-6">
       <div className="flex flex-col gap-1.5">
         <div className="flex aspect-square h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-bl from-[#7638FA] via-[#FF006A] to-[#FED702]">
           <FaInstagram className="text-2xl text-white" />
@@ -84,6 +85,5 @@ export default async function YouTube() {
         </Link>
         </div>
         </Card>
-    </Halo>
   );
 }

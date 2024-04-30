@@ -1,12 +1,10 @@
 import Card from "@/app/components/bento/CardTemplate";
 import Link from "@/components/ui/Link";
-import Halo from "@/components/ui/Halo";
 import { FaTelegram } from "react-icons/fa";
 
 export default function Gumroad() {
   return (
-    
-    <Halo className="col-span-1 row-span-1">
+  
       <Link
         href="https://t.me/krasnokutskiii"
         className="no-underline"
@@ -28,7 +26,7 @@ export default function Gumroad() {
 
         </Card>
       </Link>
-    </Halo>
+    
   );
 }
 
