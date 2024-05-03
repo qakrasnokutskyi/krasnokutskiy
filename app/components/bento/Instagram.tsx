@@ -11,7 +11,7 @@ export default function Instagram() {
         <p className="text-secondary">GitHub</p>
         <p className="line-clamp-2">Repository and all</p>
         <Link
-          className="mt-auto flex w-fit items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
+          className="mt-auto flex w-fit items-center gap-1.5 rounded-full bg-tertiary px-4 py-1.5 text-sm no-underline"
           href="https://github.com/qakrasnokutskyi"
         >
           <span className="font-medium text-primary">Follow</span>

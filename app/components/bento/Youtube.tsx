@@ -29,7 +29,7 @@ export default async function YouTube() {
         <p className="text-secondary">About me</p>
         {/* <p className="line-clamp-2">@krasnokutskii</p> */}
         <Link
-          className="mt-auto flex items-center gap-1.5 rounded-full bg-secondary px-4 py-1.5 text-sm no-underline hover:bg-tertiary"
+          className="mt-auto flex items-center gap-1.5 rounded-full bg-tertiary px-4 py-1.5 text-sm no-underline"
           href="https://www.instagram.com/krasnokutskii.vadim/"
         >
           <span className="font-medium text-primary">Follow</span>

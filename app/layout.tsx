@@ -27,7 +27,7 @@ export const metadata: Metadata = {
           <body
             className={clsx(
               inter.className,
-              "width-full bg-primary text-primary antialiased dark:bg-black",
+              "width-full bg-primary text-primary antialiased",
             )}
           >
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
