@@ -7,7 +7,7 @@ export default function Gumroad() {
   
       <Link
         href="https://t.me/krasnokutskiii"
-        className="no-underline"
+        className="col-span-1 row-span-1 no-underline hidden md:block"
       >
         <Card className="flex aspect-square flex-col gap-1.5 p-4 md:p-6">
           <div className="flex aspect-square h-8 w-8 items-center justify-center rounded-xl bg-[ffffff]">

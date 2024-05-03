@@ -8,22 +8,19 @@ import { useTheme } from "next-themes";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jhc25va3V0c2tpaWkiLCJhIjoiY2x1azA1Nnc3MGY0ejJrbjI3M2N6Nm0wMiJ9.-86cqwzGEDdp6x90rgzYXQ';
 
-export default function Map() {
+export default function Map({ lng, lat, zoom = 1, pitch = 25, time = null }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(35.1396); 
-  const [lat, setLat] = useState(47.8388); 
-  const [zoom, setZoom] = useState(15.5);
-  const [pitch, setPitch] = useState(15);
 
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   let mapTheme;
   if (resolvedTheme === "dark") {
     mapTheme = "night";
   } else if (resolvedTheme === "light") {
-    mapTheme = "day";
-  } else {
-    mapTheme = "night";
+    mapTheme = "light";
+  }
+  if (time) {
+    mapTheme = time;
   }
 
   useEffect(() => {

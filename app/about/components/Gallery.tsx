@@ -49,7 +49,7 @@ function Photo({
     filename ||
     (typeof src !== "string" &&
       `${src.src.split("/").at(-1)?.split(".")[0]}.jpg`);
-  const shared = "absolute h-full w-full rounded-xl overflow-hidden";
+      const shared = "absolute h-full w-full rounded-xl overflow-hidden";
   return (
     <motion.div
       className={`absolute mx-auto cursor-grab hover:before:block hover:before:w-[calc(100%+55px)] hover:before:h-[300px] hover:before:absolute hover:before:-top-8 hover:before:-left-7`}
@@ -109,7 +109,7 @@ function Photo({
         <div
           className={clsx(
             shared,
-            "bg-[#FFFAF2] flex items-center rounded-2xl overflow-hidden"
+            "bg-[#FFFAF2] flex items-center rounded-xl overflow-hidden"
           )}
           style={{
             backfaceVisibility: "hidden",
