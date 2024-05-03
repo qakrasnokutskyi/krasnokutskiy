@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jhc25va3V0c2tpaWkiLCJhIjoiY2x1azA1Nnc3MGY0ejJrbjI3M2N6Nm0wMiJ9.-86cqwzGEDdp6x90rgzYXQ';
 
-export default function Map({ lng, lat, zoom = 1, pitch = 25, time = null }) {
+export default function Map({ lng, lat, zoom = 2, pitch = 25, time = null }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
 
