@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     description: "Join the community and share your thoughts.",
     type: "website",
     url: "https://krasnokutskiy.vercel.app/community",
-    images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=Community", alt: "community" }],
+    images: [
+      { url: "https://krasnokutskiy.vercel.app/api/og?title=Community", alt: "community" },
+    ],
   },
 };
 

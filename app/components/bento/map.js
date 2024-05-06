@@ -36,7 +36,7 @@ export default function Map({ lng, lat, zoom = 2, pitch = 25, time = null }) {
     // set configproperties
     map.current.on("style.load", () => {
       map.current.setConfigProperty("basemap", "lightPreset", mapTheme);
-      map.current.setPadding({ left: 150, bottom: 20 });
+      map.current.setPadding({ left: 150 });
 
       const el = document.createElement("span");
       el.className = "map-marker";

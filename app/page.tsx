@@ -33,7 +33,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold tracking-tight text-primary">
           Vadim Krasnokutskiy
           </h1>
-          <p className="max-w-lg leading-relaxed text-secondary">
+          <p className="max-w-lg text-secondary">
             Hi there, I&apos;m tester who loves to create something new. 
             Besides testing, I also enjoy programming, where I focus on developing my portfolio, and personal development.
           </p>
@@ -57,7 +57,7 @@ export default function Home() {
             Latest Posts
             <ArrowUpRightIcon className="h-5 w-5 text-tertiary transition-all group-hover:text-primary" />
           </Link>
-          <p className="max-w-lg leading-relaxed text-secondary">
+          <p className="max-w-lg text-secondary">
             From time to time I write about my life, productivity and more. 
             Check me out and subscribe to stay updated.
           </p>
