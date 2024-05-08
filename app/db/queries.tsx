@@ -1,7 +1,7 @@
 "use server";
 import { sql } from "@vercel/postgres";
-import { revalidatePath } from "next/cache";
 import { clerkClient } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
 
 interface UserData {
   imageUrl: string;
@@ -18,6 +18,7 @@ export interface CommunityPostProps {
   topic_id: number;
   topic_name: string;
   user: UserData;
+  reply_count: number;
 }
 
 export interface TopicProps {
@@ -51,45 +52,45 @@ export async function getCommunityTopics(): Promise<TopicProps[]> {
   return result.rows as TopicProps[];
 }
 
-export async function getCommunityPosts(): Promise<CommunityPostProps[]> {
-  if (!process.env.POSTGRES_URL) {
-    return [];
-  }
-
-  const result = await sql`
-    SELECT community_posts.*, Topics.name AS topic_name
-    FROM community_posts
-    JOIN Topics ON community_posts.topic_id = Topics.id
-    ORDER BY community_posts.created_at DESC
-    LIMIT 100;
-  `;
-
-  const postsWithUserData = await mapUserDataToPosts(result.rows);
-  return postsWithUserData;
-}
-
-export async function getCommunityPostsForTopic(
-  topic: string,
+export async function getCommunityPosts(
+  topic?: string,
 ): Promise<CommunityPostProps[]> {
   if (!process.env.POSTGRES_URL) {
     return [];
   }
 
-  const result = await sql`
-    SELECT community_posts.*, Topics.name AS topic_name
-    FROM community_posts
-    JOIN Topics ON community_posts.topic_id = Topics.id
-    WHERE Topics.name = ${topic}
-    ORDER BY community_posts.created_at DESC
-    LIMIT 100;
-  `;
+  revalidatePath("/community/[topic]", "page");
+  let result;
+
+  if (topic) {
+    result = await sql`
+      SELECT community_posts.*, Topics.name AS topic_name, COUNT(replies.id) AS reply_count
+      FROM community_posts
+      JOIN Topics ON community_posts.topic_id = Topics.id
+      LEFT JOIN replies ON community_posts.id = replies.post_id
+      WHERE Topics.name = ${topic}
+      GROUP BY community_posts.id, Topics.name
+      ORDER BY community_posts.created_at DESC
+      LIMIT 75;
+    `;
+  } else {
+    result = await sql`
+      SELECT community_posts.*, Topics.name AS topic_name, COUNT(replies.id) AS reply_count
+      FROM community_posts
+      JOIN Topics ON community_posts.topic_id = Topics.id
+      LEFT JOIN replies ON community_posts.id = replies.post_id
+      GROUP BY community_posts.id, Topics.name
+      ORDER BY community_posts.created_at DESC
+      LIMIT 75;
+    `;
+  }
 
   const postsWithUserData = await mapUserDataToPosts(result.rows);
   return postsWithUserData;
 }
 
 async function mapUserDataToPosts(posts: any[]): Promise<CommunityPostProps[]> {
-  const userIds = [...new Set(posts.map(post => post.clerk_user_id))];
+  const userIds = [...new Set(posts.map((post) => post.clerk_user_id))];
   
   const response = await clerkClient.users.getUserList({
     userId: userIds,
@@ -116,4 +117,22 @@ async function mapUserDataToPosts(posts: any[]): Promise<CommunityPostProps[]> {
   });
 
   return postsWithUserData as CommunityPostProps[];
+}
+
+export async function getReplies(
+  postId: number,
+): Promise<CommunityPostProps[]> {
+  if (!process.env.POSTGRES_URL) {
+    return [];
+  }
+
+  revalidatePath("/community");
+
+  const result = await sql`
+    SELECT * FROM replies WHERE post_id = ${postId} 
+    ORDER BY created_at ASC;
+  `;
+
+  const postsWithUserData = await mapUserDataToPosts(result.rows);
+  return postsWithUserData;
 }
