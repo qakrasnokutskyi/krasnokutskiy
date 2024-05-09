@@ -1,14 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import clsx from "clsx";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import { ClerkProvider } from "@clerk/nextjs";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Home | Krasnokutskiy",
@@ -23,13 +21,8 @@ export const metadata: Metadata = {
   }) {
     return (
       <ClerkProvider>
-        <html lang="en">
-          <body
-            className={clsx(
-              inter.className,
-              "width-full bg-white text-primary antialiased dark:bg-black",
-            )}
-          >
+        <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        <body className="width-full bg-white text-primary antialiased dark:bg-black">
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <Navigation />
   
