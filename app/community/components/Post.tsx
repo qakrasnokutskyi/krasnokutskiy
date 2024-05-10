@@ -88,7 +88,7 @@ export default function Post({ post }: { post: CommunityPostProps }) {
         <div className="flex items-center gap-1.5">
           <p className="line-clamp-1 inline-flex items-center gap-0.5 break-all font-medium">
             {displayName}
-            {post?.user?.username === "brianruizy" ? (
+            {post?.user?.username === "qakrasnokutskyi" ? (
               /* prettier-ignore */
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
                 <path fillRule="evenodd" d="M16.403 12.652a3 3 0 0 0 0-5.304 3 3 0 0 0-3.75-3.751 3 3 0 0 0-5.305 0 3 3 0 0 0-3.751 3.75 3 3 0 0 0 0 5.305 3 3 0 0 0 3.75 3.751 3 3 0 0 0 5.305 0 3 3 0 0 0 3.751-3.75Zm-2.546-4.46a.75.75 0 0 0-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd"/>
