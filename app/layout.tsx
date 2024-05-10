@@ -9,9 +9,15 @@ import Navigation from "@/components/Navigation";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://krasnokutskiy.vercel.app/"),
   title: "Home | Krasnokutskiy",
   description:
     "I am a full-stack software engineer who basically just enjoys creating things.",
+    openGraph: {
+      title: "Vadim Krasnokutskiy",
+      url: "https://krasnokutskiy.vercel.app/",
+      images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=B-R.io", alt: "b-r.io" }],
+    },
   };
 
   export default function RootLayout({
