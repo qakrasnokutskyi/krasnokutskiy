@@ -34,7 +34,7 @@ export default function CreditCard() {
           </div>
           <div>
             <p className="text-xs">Expires 12-2030</p>
-            <p className="text-xl text-black">Brian Ruiz</p>
+            <p className="text-xl text-black">Vadim Krasnokutskiy</p>
           </div>
         </div>
 
