@@ -54,7 +54,7 @@ export async function generateMetadata(
       url: `https://krasnokutskiy.vercel.app/blog/${slug}`,
       images: [
         {
-          url: `https://b-r.io/api/og?title=${title}`,
+          url: `https://krasnokutskiy.vercel.app/api/og?title=${title}`,
           alt: title,
         },
         { url: ogImage, alt: title },

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
       title: "Vadim Krasnokutskiy",
       url: "https://krasnokutskiy.vercel.app/",
-      images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=B-R.io", alt: "b-r.io" }],
+      images: [{ url: "https://krasnokutskiy.vercel.app/api/og?title=krasnokutskiy.vercel.app", alt: "krasnokutskiy.vercel.app" }],
     },
   };
 
