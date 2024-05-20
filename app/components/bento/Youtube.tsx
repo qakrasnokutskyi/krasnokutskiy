@@ -32,7 +32,7 @@ export default async function YouTube() {
           className="mt-auto flex items-center gap-1.5 rounded-full bg-tertiary px-4 py-1.5 text-sm no-underline"
           href="https://www.instagram.com/krasnokutskii.vadim/"
         >
-          <span className="font-medium text-primary">Follow</span>
+          <span className="font-medium text-primary">Subscribe</span>
           <span className="text-tertiary"> 421
           {/* {Math.floor(data?.subscribers / 100)} */}
           </span>

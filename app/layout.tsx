@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     return (
       <ClerkProvider>
         <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-        <body className="width-full bg-white text-primary antialiased dark:bg-black">
+        <body className="width-full bg-primary text-primary antialiased">
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <Navigation />
   

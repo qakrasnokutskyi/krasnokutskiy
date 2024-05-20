@@ -15,7 +15,7 @@ export default function Instagram() {
           href="https://github.com/qakrasnokutskyi"
         >
           <span className="font-medium text-primary">Follow</span>
-          <span className="text-tertiary">13</span>
+          <span className="text-tertiary">15</span>
         </Link>
       </Card>
   );
