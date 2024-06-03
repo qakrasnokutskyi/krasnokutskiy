@@ -17,53 +17,82 @@ export default function Home() {
     // 3 most recent
     .filter((_, i) => i < 3);
 
-  return (
-    <div className="flex flex-col gap-16 md:gap-24">
-      <div className="flex animate-in flex-col gap-8">
-      <div
-          className="animate-in"
-          style={{ "--index": 1 } as React.CSSProperties}
+    return (
+      <div className="flex flex-col gap-16 md:gap-24">
+        <div className="flex animate-in flex-col gap-8">
+        {/* <div
+            className="animate-in"
+            style={{ "--index": 1 } as React.CSSProperties}
+            >
+            <Avatar src={Me} alt="Brian Ruiz" initials="br" size="lg" />
+          </div> */}
+          <div
+            className="animate-in space-y-4"
+            style={{ "--index": 2 } as React.CSSProperties}
           >
-          <Avatar src={Me} alt="Brian Ruiz" initials="br" size="lg" />
+            <h1 className="animate-in text-3xl font-semibold tracking-tight text-primary">
+              hey, Vadim here!
+            </h1>
+            <p className="max-w-lg text-secondary">
+              Hi there, I&apos;m tester who loves to create something new. 
+              Besides testing, I also enjoy programming, where I focus on developing my portfolio, and personal development.
+            </p>
+          </div>
+          <div
+            className="flex animate-in gap-3 text-sm"
+            style={{ "--index": 2 } as React.CSSProperties}
+          >
+            <Link
+              className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+              href="mailto:qakrasnokutskiy@gmail.com"
+            >
+              partners@k-v.io
+              <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/krasnokutskii.vadim/"
+              className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+            >
+              IG
+              <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+            </Link>
+            <Link
+              className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+              href="https://t.me/krasnokutskiii"
+            >
+              Telegram
+              <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+            </Link>
+          </div>
         </div>
+  
         <div
-          className="animate-in space-y-4"
-          style={{ "--index": 2 } as React.CSSProperties}
-        >
-          <h1 className="text-3xl font-bold tracking-tight text-primary">
-          Vadim Krasnokutskiy
-          </h1>
-          <p className="max-w-lg text-secondary">
-            Hi there, I&apos;m tester who loves to create something new. 
-            Besides testing, I also enjoy programming, where I focus on developing my portfolio, and personal development.
-          </p>
-        </div>
-      </div>
-      <div
-        className="animate-in"
-        style={{ "--index": 3 } as React.CSSProperties}
-      >
-        <BentoGrid />
-      </div>
-      <div
         className="flex animate-in flex-col gap-8"
         style={{ "--index": 4 } as React.CSSProperties}
       >
-        <div className="space-y-4">
-          <Link
-            className="group flex items-center gap-2 text-xl font-semibold tracking-tight text-primary"
-            href="/blog"
-          >
-            Latest blogs
-            <ArrowUpRightIcon className="h-5 w-5 text-tertiary transition-all group-hover:text-primary" />
-          </Link>
-          <p className="max-w-lg text-secondary">
-            From time to time I write about my life, productivity and more. 
-            Check me out and subscribe to stay updated.
-          </p>
+        <p className="tracking-tight text-secondary">Pinned Community</p>
+          <BentoGrid/>
         </div>
-        <PostList posts={blogs} />
+  
+        <div
+          className="flex animate-in flex-col gap-8"
+          style={{ "--index": 4 } as React.CSSProperties}
+        >
+          <div className="space-y-4">
+            <Link
+              className="group flex items-center gap-2 tracking-tight text-secondary"
+              href="/blog"
+            >
+              Latest blogs
+              <ArrowUpRightIcon className="h-5 w-5 text-tertiary transition-all group-hover:text-primary" />
+            </Link>
+            <p className="max-w-lg text-tertiary">
+              I occasionally write about programming, productivity, and more.
+              Check me out and subscribe to stay up to date.
+            </p>
+          </div>
+          <PostList posts={blogs} />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
