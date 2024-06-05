@@ -33,9 +33,12 @@ export default function Home() {
             <h1 className="animate-in text-3xl font-semibold tracking-tight text-primary">
               hey, Vadim here!
             </h1>
-            <p className="max-w-lg text-secondary">
-              Hi there, I&apos;m tester who loves to create something new. 
-              Besides testing, I also enjoy programming, where I focus on developing my portfolio, and personal development.
+            <p
+            className="max-w-lg animate-in text-secondary"
+            style={{ "--index": 1 } as React.CSSProperties}
+            >
+              I am a QA Engineer who test for the web, mobile with a oriented approach. 
+              In addition to testing I also enjoy automation-testing, where I focus on personal development.
             </p>
           </div>
           <div
