@@ -1,4 +1,11 @@
-import { FaYoutube, FaGithub, FaInstagram, FaLinkedin, FaTelegram } from "react-icons/fa";
+import {
+  FaYoutube,
+  FaGithub,
+  FaInstagram,
+  FaTelegram,
+  FaLinkedin,
+  FaDiscord,
+} from "react-icons/fa";
 
 interface ConnectLink {
   label: string;
@@ -26,6 +33,7 @@ const ConnectLinks: ConnectLink[] = [
     label: "Telegram",
     href: "https://t.me/krasnokutskiii",
     icon: <FaTelegram/>,
+  
     // icon: (
     //   <svg
     //     xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +45,11 @@ const ConnectLinks: ConnectLink[] = [
     //     <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
     //   </svg>
     // ),
+  },
+  {
+    label: "Discord",
+    href: "https://discord.gg/KhNh8nbw3U",
+    icon: <FaDiscord />,
   },
   // {
   //   label: "YouTube",

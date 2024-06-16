@@ -47,11 +47,18 @@ export default function Home() {
           >
             <Link
               className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
-              href="mailto:qakrasnokutskiy@gmail.com"
+              href="/links"
             >
-              partners@k-v.io
+              Links
               <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
             </Link>
+            <Link
+            href="https://discord.gg/EdY5fMzu"
+            className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+          >
+            Discord
+            <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+          </Link>
             <Link
               href="https://www.instagram.com/krasnokutskii.vadim/"
               className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
