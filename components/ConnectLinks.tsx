@@ -48,7 +48,7 @@ const ConnectLinks: ConnectLink[] = [
   },
   {
     label: "Discord",
-    href: "https://discord.gg/KhNh8nbw3U",
+    href: "https://discord.gg/EdY5fMzu",
     icon: <FaDiscord />,
   },
   // {
