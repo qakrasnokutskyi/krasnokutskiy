@@ -20,12 +20,12 @@ export default function Home() {
     return (
       <div className="flex flex-col gap-16 md:gap-24">
         <div className="flex animate-in flex-col gap-8">
-        {/* <div
+        <div
             className="animate-in"
             style={{ "--index": 1 } as React.CSSProperties}
             >
             <Avatar src={Me} alt="Brian Ruiz" initials="br" size="lg" />
-          </div> */}
+          </div>
           <div
             className="animate-in space-y-4"
             style={{ "--index": 2 } as React.CSSProperties}
@@ -80,7 +80,7 @@ export default function Home() {
         className="flex animate-in flex-col gap-8"
         style={{ "--index": 4 } as React.CSSProperties}
       >
-        <p className="tracking-tight text-secondary">Pinned Community</p>
+        <p className="tracking-tight text-secondary">Pinned Information</p>
           <BentoGrid/>
         </div>
   

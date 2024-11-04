@@ -14,6 +14,7 @@ import uhdLogo from "public/work/uhd.png";
 
 import meArina from "public/gallery/me-arina.png";
 import roma from "public/gallery/roma.jpg";
+import Greeting from "./components/Greeting";
 
 export const metadata: Metadata = {
   title: "About | Krasnokutskiy",
@@ -75,10 +76,14 @@ export default function About() {
           <div className="flex flex-col gap-6">
             
             <p>
-            Hi, i&apos;m Vadim Krasnokutsky, my experience in testing as a QA Engineer{" "}
-              {new Date().getFullYear() - 2023} years. Besides testing, 
-              I also love to develop myself and always learn something new. 
-              I focus on technical equipment, creative work and a bit of personal development.
+            <Greeting /> I&apos;m Vadim Krasnokutskiy. Originally from Ukraine and now
+              based in the vibrant city of Zaporizhzhya.
+            </p>
+            <p>
+              My passion for computers began at age 10, which naturally led me
+              to testing. I&apos;ve been working as a mobile Quality Assurance Engineer
+              specializing in testing mobile applications and design for{" "}
+              {new Date().getFullYear() - 2022} years now!
             </p>
             <p>
             You can chat with me at{" "}
@@ -91,7 +96,7 @@ export default function About() {
             
             </p>
             <p>
-              When I&apos;m not at work, I&apos;m most likely working on development or improving this site :]
+              When I&apos;m not at work, I&apos;m most likely working on development or improving this site or enjoying some coffee at a local shop!
             </p>
           </div>
         </Section>
