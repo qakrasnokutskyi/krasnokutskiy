@@ -46,7 +46,7 @@ export default function About() {
             alt={"me and lily"}
             width={324}
             height={139}
-            className="pointer-events-none relative inset-0 h-60 -rotate-6 rounded-xl bg-gray-400 object-cover shadow-md"
+            className="pointer-events-none relative inset-0 h-52 w-60 -rotate-6 rounded-xl bg-neutral-400 object-cover object-right shadow-md"
             priority
           />
         </div>
@@ -60,7 +60,7 @@ export default function About() {
             alt={"me and lily"}
             width={220}
             height={260}
-            className="pointer-events-none absolute inset-0 -top-48 left-[45%] w-48 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56"
+            className="pointer-events-none absolute inset-0 -top-44 left-[40%] w-48 rotate-6 rounded-xl bg-neutral-400 object-cover shadow-md md:left-[60%] md:w-56"
             priority
           />
         </div>
@@ -80,8 +80,8 @@ export default function About() {
               based in the vibrant city of Zaporizhzhya.
             </p>
             <p>
-              My passion for computers began at age 10, which naturally led me
-              to testing. I&apos;ve been working as a mobile Quality Assurance Engineer
+              My curiosity for computers began at age 10, which naturally led me
+              to pursue a career in tech. I&apos;ve been working as a mobile Quality Assurance Engineer
               specializing in testing mobile applications and design for{" "}
               {new Date().getFullYear() - 2022} years now!
             </p>

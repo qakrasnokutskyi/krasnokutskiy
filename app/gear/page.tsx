@@ -36,16 +36,16 @@ interface ItemProps {
 }
 
 const Item = ({ title, description, image, link, sponsored }: ItemProps) => (
-  <li className="flex gap-4 items-center transition-opacity">
+  <li className="col-span-1 row-span-1 flex snap-start items-center gap-4 transition-opacity">
     <a
-       className="relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl bg-tertiary shadow-sm border border-secondary"
+       className="relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl border border-primary bg-tertiary"
       href={link}
       target="_blank"
     >
       <Image
         src={image}
         alt={title}
-        className="object-center object-cover w-full h-full"
+        className="h-full w-full overflow-hidden rounded-xl object-cover object-center"
         fill
       />
     </a>
@@ -60,7 +60,7 @@ const Item = ({ title, description, image, link, sponsored }: ItemProps) => (
       </div>
       <div>
         <a
-          className="ml-auto h-fit rounded-full bg-tertiary px-4 py-1 text-sm"
+          className="ml-auto h-fit rounded-full bg-tertiary px-4 py-2 text-sm"
           href={link}
           target="_blank"
         >
@@ -114,7 +114,7 @@ export default function Gear() {
             style={{ "--index": 3 } as React.CSSProperties}
           >
             <h2 className="text-secondary">{category}</h2>
-            <ul className="grid md:grid-cols-2 gap-x-6 gap-y-8 animated-list">
+            <ul className="animated-list -mx-6 grid snap-x snap-mandatory scroll-pl-6 auto-cols-[100%] grid-flow-col grid-rows-3 flex-nowrap gap-x-3 gap-y-8 overflow-x-scroll px-6 md:grid md:grid-flow-row md:grid-cols-2 md:grid-rows-none md:gap-x-6 md:overflow-auto">
               {gear.map((item, index) => {
                 if (item.category === category) {
                   return (
